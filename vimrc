@@ -67,8 +67,6 @@ set wrap "Wrap lines
 
 filetype on             " Required, turn on and off to fix OS X problem
 filetype off            " Required, turn on and off to fix OS X problem
-filetype plugin on      " Use filetype plugins for nerdcommenter, and nerdtree  plugin
-filetype indent on      " Required by vundle
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mapping 
@@ -111,11 +109,29 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
+" NERDTree for sweet file browsing
 Bundle 'scrooloose/nerdtree'
+" NERDCommenter for easy/sexy commenting
 Bundle 'scrooloose/nerdcommenter'
+" powerline for an awesome status line
 Bundle 'Lokaltog/powerline' 
+" vim-repeat, allows plugin maps to be repeated
+Bundle 'tpope/vim-repeat'
+" vim-speeddating, increment dates, times etc., use :SpeedDatingFormat
+Bundle 'tpope/vim-speeddating'
+" ctrlp for fuzzy searching, essential
+Bundle 'https://github.com/kien/ctrlp.vim.git'
 
+" Vundle setup
+filetype plugin on      " Use filetype plugins for nerdcommenter, and nerdtree  plugin
+filetype indent on      " Required by vundle
+
+" NERDtree setup
 let NERDTreeShowHidden = 1 " Let nerdtree show hidden files
+
+" ctrlp setup
+set runtimepath^=~/.vim/bundle/ctrlp.vim
+let g:ctrlp_switch_buffer = 'Et' " If already open, try to switch instead of opening
 
 " powerline setup using vundle
 " set rtp+={repository_root}/powerline/bindings/vim
