@@ -72,6 +72,11 @@ filetype indent on      " Required by vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mapping 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Get rid of those dirty arrow keys
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " With a map leader it's possible to do extra key combinations
 let mapleader = ","
@@ -80,13 +85,12 @@ let g:mapleader = ","
 " Fast saving, exiting, reload vimrc
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
-nmap <leader>s :so ~/.vimrc<cr>
 
 " Fast NERDTree opening
 nmap <leader>n :NERDTree<cr>
 
-" Get rid of obnoxious highlighting after searches with esc key
-nnoremap <esc> :noh<cr><esc>
+" Get rid of obnoxious highlighting after searches with return key
+"nmap <CR> :noh<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Bundles 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -100,7 +104,6 @@ nnoremap <esc> :noh<cr><esc>
 "
 " see :h vundle for more details or wiki for FAQ
 " To install bundles, just add in below (defaults to github)
-" and type :BundleInstall (after :so ~/.vimrc of course)
 " NOTE: comments after Bundle command are not allowed..
 
 set rtp+=~/.vim/bundle/vundle/
@@ -109,7 +112,12 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'Lokaltog/powerline'
+Bundle 'Lokaltog/powerline' 
 
 let NERDTreeShowHidden = 1 " Let nerdtree show hidden files
+
+" powerline setup using vundle
+" set rtp+={repository_root}/powerline/bindings/vim
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+
 
