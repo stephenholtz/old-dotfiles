@@ -61,12 +61,22 @@ set tabstop=4
 set lbr
 set tw=500
 
-set ai "Auto indent
-set si "Smart indent
-set wrap "Wrap lines
+set ai   " Auto indent
+set si   " Smart indent
+set wrap " Wrap lines
 
 filetype on             " Required, turn on and off to fix OS X problem
 filetype off            " Required, turn on and off to fix OS X problem
+
+" Speed up transition from modes (very effective!)
+if ! has('gui_running')
+    set ttimeoutlen=10
+    augroup FastEscape
+        autocmd!
+        au InsertEnter * set timeoutlen=0
+        au InsertLeave * set timeoutlen=1000
+    augroup END
+endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mapping 
@@ -84,6 +94,7 @@ let g:mapleader = ","
 " Fast saving, exiting, reload vimrc
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
+nmap <leader>e :e!<cr>
 
 " Fast NERDTree opening
 nmap <leader>n :NERDTree<cr>
@@ -108,7 +119,14 @@ nmap <leader>n :NERDTree<cr>
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
+" vundle to easily manage plugins
 Bundle 'gmarik/vundle'
+" surround makes parens better than parents
+Bundle 'tpope/vim-surround'
+" characterize extends 'ga' to give unicode
+Bundle 'tpope/vim-characterize'
+" tabular makes organized, readable code
+Bundle 'godlygeek/tabular'
 " NERDTree for sweet file browsing
 Bundle 'scrooloose/nerdtree'
 " NERDCommenter for easy/sexy commenting
