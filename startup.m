@@ -17,7 +17,7 @@ end
 userpath('clear');
 switch computer
     case 'MACI64'
-        [~,user]=system('whoami','-echo'); clc;
+        [~,user]=system('whoami','-echo');
         % Strip the last character from the output
         userpath(fullfile('/Users',user(1:end-1)));
     otherwise
@@ -25,9 +25,12 @@ switch computer
         disp('Path not set, edit startup.m')
 end
 
+% clear system output
+clc; clear;
+
 % Add my utilities to the path every time
 addpath(genpath('/Users/stephenholtz/matlab-utils'))
 addpath(genpath('XmegaController_Matlab_V13'))
 
 % Remind myself that this script runs
-disp(['Ran: ' cwd '.']);
+disp('ran startup.m');

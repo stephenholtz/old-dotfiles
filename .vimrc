@@ -1,56 +1,53 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Maintainer: 
-"     Stephen Holtz 
-"     stephenholtz.com
+" "     Stephen Holtz 
+" "     stephenholtz.com
+" "
+" " Portions borrowed from:
+" "     https://github.com/amix/vimrc (almost all of sugar from here)
+" "     http://www.astro.ucla.edu/~mperrin/comp/vimrc
+" "
+" " Sections:
+" "    -> General
+" "    -> Key mapping
+" "    -> Bundles 
+" "    -> MATLAB
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-" Portions borrowed from:
-"     https://github.com/amix/vimrc (almost all of sugar from here)
-"     http://www.astro.ucla.edu/~mperrin/comp/vimrc
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" " => General
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "
-" Sections:
-"    -> General
-"    -> Key mapping
-"    -> Bundles 
-"    -> MATLAB
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => General
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-set nocompatible                " Allow just Vi iMproved
-set history=700                 " Sets how many lines of history VIM has to remember
-set autoread                    " Set to auto read when a file is changed from the outside
-set so=4                        " Set 4 lines to the cursor - when moving vertically using j/k
-set nonumber                    " don't show line numbers
-set wildmenu                    " Turn on the WiLd menu for tab complete etc.,
-set wildignore=*.o,*~,*.pyc     " Ignore compiled files
-set ruler                       " Always show current position
-set cmdheight=2                 " Height of the command bar
-set hid                         " A buffer becomes hidden when it is abandoned
-set backspace=eol,start,indent  " Configure backspace so it acts as it should act
-set whichwrap+=<,>,h,l          " Vestigial, unsure of function....
-set ignorecase                  " Ignore case when searching
-set smartcase                   " When searching try to be smart about cases 
-set hlsearch                    " Highlight search results
-set incsearch                   " Makes search act like search in modern browsers
-set magic                       " For regular expressions turn magic on
-set showmatch                   " Show matching brackets when text indicator is over them
-set mat=2                       " How many tenths of a second to blink when matching brackets
-set noerrorbells                " No annoying sound on errors
-set novisualbell                " No annoying sound on errors
-set t_vb=
-set tm=500
-set nobackup                    " Turn backup off, since most stuff is in SVN, git et.c anyway...
-set nowb 
-set noswapfile                  
-set encoding=utf8               " Set utf8 as standard encoding and en_US as the standard language
-set ffs=unix,dos,mac            " Use Unix as the standard file type
-
-" Appearance
-syntax enable                   " Enable syntax highlighting
-colorscheme desert              " Very popular setting
-set background=dark             " Works with desert well
+" set nocompatible                " Allow just Vi iMproved
+" set history=700                 " Sets how many lines of history VIM has to remember
+" set autoread                    " Set to auto read when a file is changed from the outside
+" set so=4                        " Set 4 lines to the cursor - when moving vertically using j/k
+" set nonumber                    " don't show line numbers
+" set wildmenu                    " Turn on the WiLd menu for tab complete etc.,
+" set wildignore=*.o,*~,*.pyc     " Ignore compiled files
+" set ruler                       " Always show current position
+" set cmdheight=2                 " Height of the command bar
+" set hid                         " A buffer becomes hidden when it is abandoned
+" set backspace=eol,start,indent  " Configure backspace so it acts as it should act
+" set whichwrap+=<,>,h,l          " Vestigial, unsure of function....
+" set ignorecase                  " Ignore case when searching
+" set smartcase                   " When searching try to be smart about cases 
+" set hlsearch                    " Highlight search results
+" set incsearch                   " Makes search act like search in modern browsers
+" set magic                       " For regular expressions turn magic on
+" set showmatch                   " Show matching brackets when text indicator is over them
+" set mat=2                       " How many tenths of a second to blink when matching brackets
+" set noerrorbells                " No annoying sound on errors
+" set novisualbell                " No annoying sound on errors
+" set t_vb=
+" set tm=500
+" set nobackup                    " Turn backup off, since most stuff is in SVN, git et.c anyway...
+" set nowb 
+" set noswapfile                  
+" set encoding=utf8               " Set utf8 as standard encoding and en_US as the standard language
+" set ffs=unix,dos,mac            " Use Unix as the standard file type
+"
+" " Appearance                    set colorscheme is below (after bundle management)
 set lazyredraw                  " Don't redraw while executing macros (good performance config)
 set expandtab                   " Use spaces instead of tabs
 set smarttab                    " Be smart when using tabs
@@ -121,10 +118,16 @@ call vundle#rc()
 
 " vundle to easily manage plugins
 Bundle 'gmarik/vundle'
+" solarized is a very nice color setup
+Bundle 'altercation/vim-colors-solarized'
 " surround makes parens better than parents
 Bundle 'tpope/vim-surround'
 " characterize extends 'ga' to give unicode
 Bundle 'tpope/vim-characterize'
+" BufExplorer is an essential buffer ext
+Bundle 'corntrace/bufexplorer'
+" mini buffer explorer is a nicer buffer output
+Bundle 'https://github.com/fholgado/minibufexpl.vim'
 " tabular makes organized, readable code
 Bundle 'godlygeek/tabular'
 " NERDTree for sweet file browsing
@@ -139,6 +142,10 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-speeddating'
 " ctrlp for fuzzy searching, essential
 Bundle 'https://github.com/kien/ctrlp.vim.git'
+" matlab support, my own fork to fix up
+Bundle 'stephenholtz/MatlabFilesEdition'
+" vim-matlab-fold for folding like in the matlab editor
+Bundle 'djoshea/vim-matlab-fold'
 
 " Vundle setup
 filetype plugin on      " Use filetype plugins for nerdcommenter, and nerdtree  plugin
@@ -150,6 +157,11 @@ let NERDTreeShowHidden = 1 " Let nerdtree show hidden files
 " ctrlp setup
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_switch_buffer = 'Et' " If already open, try to switch instead of opening
+
+" Solarized setup
+syntax enable
+set background=dark
+colorscheme solarized
 
 " powerline setup using vundle
 " set rtp+={repository_root}/powerline/bindings/vim
