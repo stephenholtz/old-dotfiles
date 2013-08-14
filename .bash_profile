@@ -23,7 +23,7 @@ UNDERLINE=$(tput smul)
 export PS1="\[${WHITE}\](\[${YELLOW}\]\u \W\[${WHITE}\])\[${NORMAL}\]$ "
 
 # common command aliases
-alias vim='/Applications/MacVim.app/Contents/MacOS/Vim'
+alias matlab='/Applications/MATLAB_R2013a_Student.app/bin/maci64/MATLAB.app'
 alias la='ls -aG'
 alias ls='ls -G'
 alias ll='ls -lG'

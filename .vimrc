@@ -74,16 +74,6 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key mapping 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Get rid of those dirty arrow keys
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
-
-" With a map leader it's possible to do extra key combinations
-let mapleader = ","
-let g:mapleader = ","
-
 " Fast saving, exiting, reload vimrc
 nmap <leader>w :w!<cr>
 nmap <leader>q :q!<cr>
@@ -156,7 +146,7 @@ let g:ctrlp_switch_buffer = 'Et' " If already open, try to switch instead of ope
 
 " Solarized setup
 syntax enable
-set background=light
+set background=dark
 colorscheme solarized
 
 " powerline setup using vundle
