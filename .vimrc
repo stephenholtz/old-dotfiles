@@ -9,15 +9,12 @@
 " "    -> Key mapping
 " "    -> Bundles 
 
-" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " " => General
-" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 set nocompatible                " Allow just Vi iMproved
 set history=700                 " Sets how many lines of history VIM has to remember
 set autoread                    " Set to auto read when a file is changed from the outside
 set so=4                        " Set 4 lines to the cursor - when moving vertically using j/k
-set number                    " show line numbers
+set number                      " show line numbers
 set wildmenu                    " Turn on the WiLd menu for tab complete etc.,
 set wildignore=*.o,*~,*.pyc     " Ignore compiled files
 set ruler                       " Always show current position
@@ -34,21 +31,21 @@ set showmatch                   " Show matching brackets when text indicator is 
 set mat=2                       " How many tenths of a second to blink when matching brackets
 set noerrorbells                " No annoying sound on errors
 set novisualbell                " No annoying sound on errors
-set t_vb=
 set tm=500
-set nobackup                    " Turn backup off, since most stuff is in SVN, git et.c anyway...
+set nobackup                    " Turn backup off
 set nowb 
-set noswapfile                  
+set noswapfile
 set encoding=utf8               " Set utf8 as standard encoding and en_US as the standard language
 set ffs=unix,dos,mac            " Use Unix as the standard file type
 
-" " Appearance                    set colorscheme is below (after bundle management)
+" Appearance                    set colorscheme is below (after bundle management)
 set lazyredraw                  " Don't redraw while executing macros (good performance config)
 set expandtab                   " Use spaces instead of tabs
 set smarttab                    " Be smart when using tabs
 set shiftwidth=4                " 1 tab == 4 spaces
 set tabstop=4
 set guifont=Inconsolata:h14      " installed on macosx (copy in dotfiles/fonts)
+set listchars=tab:»\ ,eol:¬,trail:. " show hidden characters
 
 " Linebreak on 500 characters
 set lbr
@@ -112,8 +109,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-characterize'
 " BufExplorer is an essential buffer ext
 Bundle 'corntrace/bufexplorer'
-" mini buffer explorer is a nicer buffer output
-Bundle 'https://github.com/fholgado/minibufexpl.vim'
 " tabular makes organized, readable code
 Bundle 'godlygeek/tabular'
 " NERDTree for sweet file browsing
@@ -133,6 +128,10 @@ Bundle 'stephenholtz/MatlabFilesEdition'
 " vim-matlab-fold for folding like in the matlab editor
 Bundle 'djoshea/vim-matlab-fold'
 
+" Previously used bundles
+""" mini buffer explorer is a nicer buffer output
+""Bundle 'https://github.com/fholgado/minibufexpl.vim'
+
 " Vundle setup
 filetype plugin on      " Use filetype plugins for nerdcommenter, and nerdtree  plugin
 filetype indent on      " Required by vundle
@@ -145,14 +144,15 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_switch_buffer = 'Et' " If already open, try to switch instead of opening
 
 " Solarized setup
-syntax enable
-set background=dark
+syntax on
+set background=
+let g:solarized_termtrans = 1
 colorscheme solarized
 
 " powerline setup using vundle
 " set rtp+={repository_root}/powerline/bindings/vim
 " cp -R ~/.vim/bundle/powerline/powerline/config_files/* ~/.config/powerline
-" set iterm2 to use powerline patched font
+" *set iterm2 to use powerline patched font for both ascii and non ascii!!
 set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
 set laststatus=2
 set ambiwidth=single

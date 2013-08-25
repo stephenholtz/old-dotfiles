@@ -7,6 +7,7 @@ export EDITOR="vim"
 
 autoload -U colors && colors
 
+setopt CORRECT_ALL
 # Make a left and right prompt
 PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}%#"" "
 RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
