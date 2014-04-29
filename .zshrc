@@ -16,5 +16,6 @@ RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 alias la='ls -aG'
 alias ls='ls -G'
 alias ll='ls -lG'
+alias clc='echo use ^l dumbass'
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 
