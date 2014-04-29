@@ -127,10 +127,14 @@ Bundle 'https://github.com/kien/ctrlp.vim.git'
 Bundle 'stephenholtz/MatlabFilesEdition'
 " vim-matlab-fold for folding like in the matlab editor
 Bundle 'djoshea/vim-matlab-fold'
+" screen.vim for awesome split shell within vim
+Bundle 'ervandew/screen'
+" vim-r-plugin for communication b/n vim and R 
+Bundle 'jcfaria/VIM-R-plugin'
 
-" Previously used bundles
-""" mini buffer explorer is a nicer buffer output
-""Bundle 'https://github.com/fholgado/minibufexpl.vim'
+" R environment setup (uses VIM-R-plugin), make conditional for OSX
+let vimplugin_applescript = 0
+let vimplugin_screenplugin = 0
 
 " Vundle setup
 filetype plugin on      " Use filetype plugins for nerdcommenter, and nerdtree  plugin
