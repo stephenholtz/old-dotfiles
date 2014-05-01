@@ -131,14 +131,39 @@ Bundle 'djoshea/vim-matlab-fold'
 Bundle 'ervandew/screen'
 " vim-r-plugin for communication b/n vim and R 
 Bundle 'jcfaria/VIM-R-plugin'
-
-" R environment setup (uses VIM-R-plugin), make conditional for OSX
-let vimplugin_applescript = 0
-let vimplugin_screenplugin = 0
+" vim-matlab-behave to get matlab functionality from vim
+Bundle 'elmanuelito/vim-matlab-behave'
 
 " Vundle setup
 filetype plugin on      " Use filetype plugins for nerdcommenter, and nerdtree  plugin
 filetype indent on      " Required by vundle
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" R environment setup OSX relies on screen.vim and VIM-R-plugin
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/vim-r-plugin/.vimrc
+"
+" Opens R in terminal rather than RGui (OSX)
+"let vimplugin_applescript = 0
+"let vimplugin_screenplugin = 0
+" Other R/tmux conf
+let g:screenImpl = 'Tmux'               " Enable Tmux support
+let vimrplugin_screenvsplit = 1         " Vertical Tmux split
+let g:ScreenShellInitialFocus = 'shell' " 
+let g:vimrplugin_noscreenrc = 1         " use my own .screenrc
+let vimrplugin_conqueplugin = 0         " ignore concue plugin
+let g:vimrplugin_map_r = 1              " allow r-plugin to send lines to R
+let vimrplugin_vimpager = "no"          " see Vim buffer R documentation...
+" Mapping for R 
+" Start R with F2 Key
+map <F2> <Plug>Rstart
+imap <F2> <Plug>Rstart
+vmap <F2> <Plug>Rstart
+" Send selection to R with space bar
+vmap <Space> <Plug>RDSendSelection
+" Send line to R with space bar
+nmap <Space> <Plug>RDSendLine
+
 
 " NERDtree setup
 let NERDTreeShowHidden = 1 " Let nerdtree show hidden files
