@@ -70,11 +70,11 @@ bind r source-file ~/.tmux.conf
 # Start new session with .tmux-conf settings with: tmux attach
 # Kill session entirely from a tmux session with: C-a: kill-session
 new -n bash
-neww -n tab1 'cd ~/; bash'
-neww -n tab2 'cd ~/; bash'
-neww -n tab3 'cd ~/; bash'
-neww -n tab4 'cd ~/; bash'
-neww -n tab5 'cd ~/; bash'
+#neww -n tab1 'cd ~/; bash'
+#neww -n tab2 'cd ~/; bash'
+#neww -n tab3 'cd ~/; bash'
+#neww -n tab4 'cd ~/; bash'
+#neww -n tab5 'cd ~/; bash'
 
 select-window -t 2
 
