@@ -1,1 +1,4 @@
-My surviving configuration files...
+# Configuration Files
+- use linkall.sh for linking to local ~ dir
+- iTerm2 settings saved, tinkering required!
+- matlab startup.m should be moved with shell script

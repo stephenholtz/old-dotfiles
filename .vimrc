@@ -124,7 +124,7 @@ Bundle 'tpope/vim-speeddating'
 " ctrlp for fuzzy searching, essential
 Bundle 'https://github.com/kien/ctrlp.vim.git'
 " matlab support, my own fork to fix up
-Bundle 'stephenholtz/MatlabFilesEdition'
+Bundle 'vim-scripts/MatlabFilesEdition'
 " vim-matlab-fold for folding like in the matlab editor
 Bundle 'djoshea/vim-matlab-fold'
 " screen.vim for awesome split shell within vim
@@ -133,6 +133,8 @@ Bundle 'ervandew/screen'
 Bundle 'jcfaria/VIM-R-plugin'
 " vim-matlab-behave to get matlab functionality from vim
 Bundle 'elmanuelito/vim-matlab-behave'
+" Narrow Region Plugin (EMACS clone) 
+Bundle 'chrisbra/NrrwRgn'
 
 " Vundle setup
 filetype plugin on      " Use filetype plugins for nerdcommenter, and nerdtree  plugin
