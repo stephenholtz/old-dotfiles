@@ -1,6 +1,5 @@
 # Stephen Holtz's .zshrc
 #
-# should be linked to ~/.zshrc
 # on osx run $ chsh -s /bin/zsh to set as default
 
 export EDITOR="vim"
@@ -18,7 +17,10 @@ alias la='ls -aG'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias clc='echo use ^l dumbass'
-alias matlab='. /Applications/MATLAB_R2013a.app/bin/matlab'
 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+# matlab specific
+alias matlab='. /Applications/MATLAB_R2013a.app/bin/matlab'
+alias MATLAB='matlab'
+
+export PATH=/usr/local/bin:/usr/local/sbin:/Applications/MATLAB_R2013a.app/bin/maci64:$PATH
 

@@ -54,10 +54,7 @@ set tw=500
 set ai   " Auto indent
 set si   " Smart indent
 set wrap " Wrap lines
-
-filetype on             " Required, turn on and off to fix OS X problem
-filetype off            " Required, turn on and off to fix OS X problem
-
+"
 " Speed up transition from modes (very effective!)
 if ! has('gui_running')
     set ttimeoutlen=10
@@ -68,19 +65,6 @@ if ! has('gui_running')
     augroup END
 endif
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Key mapping 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Fast saving, exiting, reload vimrc
-nmap <leader>w :w!<cr>
-nmap <leader>q :q!<cr>
-nmap <leader>e :e!<cr>
-
-" Fast NERDTree opening
-nmap <leader>n :NERDTree<cr>
-
-" Get rid of obnoxious highlighting after searches with return key
-"nmap <CR> :noh<CR><CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Bundles 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -101,11 +85,15 @@ call vundle#rc()
 
 " vundle to easily manage plugins
 Bundle 'gmarik/vundle'
+
+""" Colorscheme plugins
 " jellybean colorscheme
 Bundle 'https://github.com/nanotech/jellybeans.vim'
 " solarized is a very nice color setup
 Bundle 'altercation/vim-colors-solarized'
-" surround makes parens better than parents
+
+""" Misc plugins
+" surround makes parens better
 Bundle 'tpope/vim-surround'
 " characterize extends 'ga' to give unicode
 Bundle 'tpope/vim-characterize'
@@ -123,38 +111,52 @@ Bundle 'Lokaltog/powerline'
 Bundle 'tpope/vim-repeat'
 " vim-speeddating, increment dates, times etc., use :SpeedDatingFormat
 Bundle 'tpope/vim-speeddating'
-" ctrlp for fuzzy searching, essential
-Bundle 'https://github.com/kien/ctrlp.vim.git'
-" matlab support 
-Bundle 'vim-scripts/MatlabFilesEdition'
-" vim-matlab-fold for folding like in the matlab editor
-Bundle 'djoshea/vim-matlab-fold'
-" screen.vim for awesome split shell within vim
-Bundle 'ervandew/screen'
-" vim-r-plugin for communication b/n vim and R 
-Bundle 'jcfaria/VIM-R-plugin'
-" vim-matlab-behave to get matlab functionality from vim
-Bundle 'elmanuelito/vim-matlab-behave'
+" ctrlp for fuzzy searching
+Bundle 'kien/ctrlp.vim'
 " Narrow Region Plugin (EMACS clone) 
 Bundle 'chrisbra/NrrwRgn'
-" vim-slime will send text to a tmux etc., session (EMACS-like)
+
+""" Language specific plugins
+" vim-r-plugin for communication b/n vim and R 
+Bundle 'jcfaria/VIM-R-plugin'
+" split shell within vim required by VimLab
+Bundle 'ervandew/screen'
+" VimLab for matlab useage (tmux / screen.vim reqd)
+Bundle "dajero/VimLab" 
+" matlab support (only working one for some reason)
+Bundle 'djoshea/vim-matlab'
+" vim-matlab-fold for folding like in the matlab editor
+Bundle 'djoshea/vim-matlab-fold'
+
+"" REPL interactions
+" vim-slime will send text to tmux etc., 
 Bundle 'jpalardy/vim-slime' 
-" VimLab for matlab useage
-Bundle "dajero/VimLab"
+" vimux is a plugin to interact with tmux
+Bundle 'benmills/vimux'
 
-" Vundle setup
-filetype plugin on      " Use filetype plugins for nerdcommenter, and nerdtree  plugin
-filetype indent on      " Required by vundle
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" matlab setup (mlint compatibility)
+" matlab's bin *must* be in my PATH
+autocmd BufEnter *.m    compiler mlint 
+autocmd BufEnter *.m    map <M-n> :cnext<CR> 
+autocmd BufEnter *.m    map <M-p> :cprevious<CR> 
+
+autocmd BufLeave *.m    unmap <M-n> 
+autocmd BufLeave *.m    unmap <M-p> 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " R environment setup OSX relies on screen.vim and VIM-R-plugin
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " - Requires installation of VimCom in R: 
 "   chooseCRANmirror()
 "   install.package('devtools')
 "   library(devtools)
 "   install_github('jalvesaq/VimCom')
 "
+
+filetype plugin on      " Use filetype plugins for nerdcommenter, and nerdtree  plugin
+filetype indent on      " Required by vundle
+
 " Opens R in terminal rather than RGui (OSX)
 let vimplugin_applescript = 0
 let vimplugin_screenplugin = 0
@@ -179,9 +181,53 @@ nmap <Space> <Plug>RDSendLine
 " NERDtree setup
 let NERDTreeShowHidden = 1 " Let nerdtree show hidden files
 
+" Fast NERDTree opening
+nmap <leader>n :NERDTree<cr>
+nmap <leader>f :MatlabFoldText()<cr>
+
 " ctrlp setup
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_switch_buffer = 'Et' " If already open, try to switch instead of opening
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vimux setup (defaults from doc/vimux.txt) 
+" [Working with MATLAB]
+" - open tmux pane and run matlab with -nodesktop -nosplash
+" - use commands below to send text, or run scripts!
+
+" Run current file in nearest non-vim pane/window
+map <Leader>rb :call VimuxRunCommand(bufname("%"))<CR>
+" Run current file, but don't hit enter (just send command)
+map <Leader>rq :call VimuxRunCommand(bufname("%"),0)<CR>
+" Run last command (in the VimuxRunCommand history)
+map <Leader>rl :call VimuxRunLastCommand()<CR>
+
+" visual mode - yank selection to register v, call slime
+vmap <Leader>vs "vy:call VimuxSlime()<cr>
+" normal mode - yank paragraph to register v, call slime
+nmap <Leader>vp vip"vy:call VimuxSlime()<cr>
+" normal mode - yank full line to register v, call slime
+nmap <Leader>vs ^v$"vy:call VimuxSlime()<cr>
+
+" Send the register text from the mapping above to the REPL
+function! VimuxSlime()
+    call VimuxOpenRunner()
+    call VimuxSendText(@v)
+    call VimuxSendKeys("Enter")
+endfunction
+
+" Keys sent to runner (might need to make this filetype specific)
+let VimuxResetSequence = ""
+let g:VimuxUseNearset = 1
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Other Key mapping 
+" Fast save / reload vimrc
+nmap <leader>w :w!<cr>
+nmap <leader>e :e!<cr>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colorscheme Setup
 
 " Solarized setup
 " syntax on

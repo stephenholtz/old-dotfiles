@@ -2,13 +2,13 @@
 %
 % Note: this has to be a hard link or in the actual directory.
 
-% restore default path
+%% restore default path
 restoredefaultpath
 
-% Add my utilities etc.,
+%% Add my utilities etc.,
 % addpath(genpath('XmegaController_Matlab_V13'))
 addpath(genpath('/Users/stephenholtz/matlab-utils'))
 addpath(genpath('~/grad_repos/calcium-processing'))
 
-% Remind myself that this script runs
+%% Remind myself that this script runs
 disp('ran startup.m');
