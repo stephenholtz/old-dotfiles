@@ -101,6 +101,8 @@ call vundle#rc()
 
 " vundle to easily manage plugins
 Bundle 'gmarik/vundle'
+" jellybean colorscheme
+Bundle 'https://github.com/nanotech/jellybeans.vim'
 " solarized is a very nice color setup
 Bundle 'altercation/vim-colors-solarized'
 " surround makes parens better than parents
@@ -123,7 +125,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-speeddating'
 " ctrlp for fuzzy searching, essential
 Bundle 'https://github.com/kien/ctrlp.vim.git'
-" matlab support, my own fork to fix up
+" matlab support 
 Bundle 'vim-scripts/MatlabFilesEdition'
 " vim-matlab-fold for folding like in the matlab editor
 Bundle 'djoshea/vim-matlab-fold'
@@ -135,6 +137,10 @@ Bundle 'jcfaria/VIM-R-plugin'
 Bundle 'elmanuelito/vim-matlab-behave'
 " Narrow Region Plugin (EMACS clone) 
 Bundle 'chrisbra/NrrwRgn'
+" vim-slime will send text to a tmux etc., session (EMACS-like)
+Bundle 'jpalardy/vim-slime' 
+" VimLab for matlab useage
+Bundle "dajero/VimLab"
 
 " Vundle setup
 filetype plugin on      " Use filetype plugins for nerdcommenter, and nerdtree  plugin
@@ -143,11 +149,15 @@ filetype indent on      " Required by vundle
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " R environment setup OSX relies on screen.vim and VIM-R-plugin
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" http://faculty.ucr.edu/~tgirke/Documents/R_BioCond/My_R_Scripts/vim-r-plugin/.vimrc
+" - Requires installation of VimCom in R: 
+"   chooseCRANmirror()
+"   install.package('devtools')
+"   library(devtools)
+"   install_github('jalvesaq/VimCom')
 "
 " Opens R in terminal rather than RGui (OSX)
-"let vimplugin_applescript = 0
-"let vimplugin_screenplugin = 0
+let vimplugin_applescript = 0
+let vimplugin_screenplugin = 0
 " Other R/tmux conf
 let g:screenImpl = 'Tmux'               " Enable Tmux support
 let vimrplugin_screenvsplit = 1         " Vertical Tmux split
@@ -166,7 +176,6 @@ vmap <Space> <Plug>RDSendSelection
 " Send line to R with space bar
 nmap <Space> <Plug>RDSendLine
 
-
 " NERDtree setup
 let NERDTreeShowHidden = 1 " Let nerdtree show hidden files
 
@@ -175,10 +184,14 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_switch_buffer = 'Et' " If already open, try to switch instead of opening
 
 " Solarized setup
+" syntax on
+" set background=
+" let g:solarized_termtrans = 1
+" colorscheme solarized
+
+" Jellybeans setup
 syntax on
-set background=
-let g:solarized_termtrans = 1
-colorscheme solarized
+colorscheme jellybeans
 
 " powerline setup using vundle
 " set rtp+={repository_root}/powerline/bindings/vim

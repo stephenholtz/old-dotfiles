@@ -18,7 +18,7 @@ alias la='ls -aG'
 alias ls='ls -G'
 alias ll='ls -lG'
 alias clc='echo use ^l dumbass'
-alias MATLAB='. /Applications/MATLAB_R2013a.app/bin/matlab'
+alias matlab='. /Applications/MATLAB_R2013a.app/bin/matlab'
 
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 

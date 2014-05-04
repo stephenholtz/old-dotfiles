@@ -5,6 +5,7 @@
 % restore default path
 restoredefaultpath
 
+% Add my utilities etc.,
 % addpath(genpath('XmegaController_Matlab_V13'))
 addpath(genpath('/Users/stephenholtz/matlab-utils'))
 addpath(genpath('~/grad_repos/calcium-processing'))
