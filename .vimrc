@@ -93,28 +93,28 @@ Bundle 'https://github.com/nanotech/jellybeans.vim'
 Bundle 'altercation/vim-colors-solarized'
 
 """ Misc plugins
-" surround makes parens better
+" surround lets you surround text easily
 Bundle 'tpope/vim-surround'
-" characterize extends 'ga' to give unicode
-Bundle 'tpope/vim-characterize'
+" Command-t is an incredibly nice file finder
+Bundle 'wincent/Command-T'
 " BufExplorer is an essential buffer ext
 Bundle 'corntrace/bufexplorer'
 " tabular makes organized, readable code
 Bundle 'godlygeek/tabular'
 " NERDTree for sweet file browsing
 Bundle 'scrooloose/nerdtree'
+" Syntastic for syntax checking
+Bundle 'scrooloose/syntastic'
 " NERDCommenter for easy/sexy commenting
 Bundle 'scrooloose/nerdcommenter'
 " powerline for an awesome status line
 Bundle 'Lokaltog/powerline' 
 " vim-repeat, allows plugin maps to be repeated
 Bundle 'tpope/vim-repeat'
-" vim-speeddating, increment dates, times etc., use :SpeedDatingFormat
-Bundle 'tpope/vim-speeddating'
 " ctrlp for fuzzy searching
 Bundle 'kien/ctrlp.vim'
-" Narrow Region Plugin (EMACS clone) 
-Bundle 'chrisbra/NrrwRgn'
+" unite searches and displays from many places
+Bundle 'Shougo/unite.vim'
 
 """ Language specific plugins
 " vim-r-plugin for communication b/n vim and R 
@@ -136,14 +136,21 @@ Bundle 'benmills/vimux'
 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Command-T Setup (from wincent.com/)
+" cd ~/.vim/bundle/Command-T/ruby/command-t
+" ruby extconf.rb
+" make
+let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " matlab setup (mlint compatibility)
 " matlab's bin *must* be in my PATH
-autocmd BufEnter *.m    compiler mlint 
-autocmd BufEnter *.m    map <M-n> :cnext<CR> 
-autocmd BufEnter *.m    map <M-p> :cprevious<CR> 
+" autocmd BufEnter *.m    compiler mlint 
+" autocmd BufEnter *.m    map <M-n> :cnext<CR> 
+" autocmd BufEnter *.m    map <M-p> :cprevious<CR> 
 
-autocmd BufLeave *.m    unmap <M-n> 
-autocmd BufLeave *.m    unmap <M-p> 
+" autocmd BufLeave *.m    unmap <M-n> 
+" autocmd BufLeave *.m    unmap <M-p> 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " R environment setup OSX relies on screen.vim and VIM-R-plugin
@@ -152,7 +159,6 @@ autocmd BufLeave *.m    unmap <M-p>
 "   install.package('devtools')
 "   library(devtools)
 "   install_github('jalvesaq/VimCom')
-"
 
 filetype plugin on      " Use filetype plugins for nerdcommenter, and nerdtree  plugin
 filetype indent on      " Required by vundle
