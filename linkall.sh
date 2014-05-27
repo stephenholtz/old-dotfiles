@@ -11,3 +11,7 @@ ln -sv $HERE/startup.m $HOME/Documents/MATLAB/startup.m
 
 # update my vim bundles
 vim +BundleInstall! +BundleClean
+
+# link my irssi scripts
+mkdir -p $HOME/.irssi/scripts/autorun
+ln -sv $HERE/irssi_autorun/{spell.pl,nicklist.pl} $HOME/.irssi/scripts/autorun

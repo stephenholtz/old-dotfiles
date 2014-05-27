@@ -14,7 +14,6 @@ RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 
 # Set up common aliases
 alias la='ls -aG'
-alias ls='ls -G'
 alias ll='ls -lG'
 alias clc='echo use ^l dumbass'
 
@@ -22,5 +21,7 @@ alias clc='echo use ^l dumbass'
 alias matlab='. /Applications/MATLAB_R2013a.app/bin/matlab'
 alias MATLAB='matlab'
 
+# cdpath/path setup
+export CDPATH=:$HOME/personal_repos/:$HOME/grad_repos/:$HOME/
 export PATH=/usr/local/bin:/usr/local/sbin:/Applications/MATLAB_R2013a.app/bin/maci64:$PATH
 

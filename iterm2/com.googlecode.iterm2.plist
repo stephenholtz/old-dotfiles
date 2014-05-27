@@ -761,7 +761,7 @@
 	<key>NSWindow Frame SUUpdateAlertFrame</key>
 	<string>354 289 575 392 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4 37 1270 741 0 0 1280 778 </string>
+	<string>0 1 1340 775 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
 	<string>432 175 570 451 0 0 1280 778 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
@@ -3565,6 +3565,8 @@
 	<false/>
 	<key>OpenTmuxWindowsIn</key>
 	<integer>1</integer>
+	<key>PMPrintingExpandedStateForPrint2</key>
+	<false/>
 	<key>PassOnControlClick</key>
 	<false/>
 	<key>PasteFromClipboard</key>
@@ -3623,7 +3625,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-05-09T02:47:33Z</date>
+	<date>2014-05-14T13:57:33Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Show Toolbelt</key>
@@ -3674,6 +3676,6 @@
 	<key>WordCharacters</key>
 	<string>/-+\~_.</string>
 	<key>iTerm Version</key>
-	<string>1.0.0.20140507-nightly</string>
+	<string>1.0.0.20140508-nightly</string>
 </dict>
 </plist>
