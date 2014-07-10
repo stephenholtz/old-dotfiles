@@ -116,6 +116,9 @@ Bundle 'kien/ctrlp.vim'
 " unite searches and displays from many places
 Bundle 'Shougo/unite.vim'
 
+""" Evernote plugins
+" evervim is a clean way to edit / browse notes
+Bundle 'kakkyz81/evervim'
 """ Language specific plugins
 " vim-r-plugin for communication b/n vim and R 
 Bundle 'jcfaria/VIM-R-plugin'

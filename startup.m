@@ -10,5 +10,8 @@ restoredefaultpath
 addpath(genpath('/Users/stephenholtz/matlab-utils'))
 addpath(genpath('~/grad_repos/calcium-processing'))
 
+% Old paths
+%addpath(genpath('~/grad_repos/culled-andermann-code-dump'))
+
 %% Remind myself that this script runs
 disp('ran startup.m');
