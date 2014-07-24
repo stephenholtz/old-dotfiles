@@ -25,7 +25,7 @@ PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1
 RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 
 # Set up common aliases
-alias clc='echo use ^l dumbass'
+alias clc='echo use \^l or clear dumbass'
 
 # matlab specific
 alias matlab='. /Applications/MATLAB_R2013a.app/bin/matlab'
