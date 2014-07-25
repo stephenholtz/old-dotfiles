@@ -28,8 +28,8 @@ RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 alias clc='echo use \^l or clear dumbass'
 
 # matlab specific
-alias matlab='. /Applications/MATLAB_R2013a.app/bin/matlab'
-alias MATLAB='matlab'
+alias matlab='. /Applications/MATLAB_R2014b.app/bin/matlab'
+alias matlabcl='echo Opening MATLAB 2014b with -nosplash -nodesktop; /Applications/MATLAB_R2014b.app/bin/matlab -nosplash -nodesktop'
 
 # cdpath/path setup
 export CDPATH=:$HOME/personal_repos/:$HOME/grad_repos/:$HOME/
