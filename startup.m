@@ -1,17 +1,23 @@
 % Execute these commands at startup
 %
-% Note: this has to be a hard link or in the actual directory.
+% Note: this has to be a hard link or in the Matlab directory.
 
-%% restore default path
+%% path changes
+
+% restore default path
 restoredefaultpath
 
-%% Add my utilities etc.,
-% addpath(genpath('XmegaController_Matlab_V13'))
-addpath(genpath('/Users/stephenholtz/matlab-utils'))
-addpath(genpath('~/grad_repos/calcium-processing'))
+% Add paths
+pathsToAdd = {  '/Users/stephenholtz/matlab-utils',...
+                '/Users/stephenholtz/grad_repos/andermann-daq-camera-acquisition',...
+                '/Users/stephenholtz/grad_repos/andermann-mouse-behavior-analysis'};
 
-% Old paths
-%addpath(genpath('~/grad_repos/culled-andermann-code-dump'))
+% Remind myself that this script runs
+fprintf('Running: %s\nRestored default Matlab path (restoredefaultpath).\nRecursively adding files from:\n',  mfilename('fullpath'))
+for path = pathsToAdd
+    fprintf('\t%s\n',path{1})
+    addpath(genpath(path{1}));
+end
 
-%% Remind myself that this script runs
-disp('ran startup.m');
+% Clean up
+clear pathsToAdd startupLoc path
