@@ -26,7 +26,7 @@ mkdir $HOME/.weechat/
 ln -sv $HERE/.weechat/* $HOME/.weechat
 mkdir $HOME/.weechat/logs
 mv $HOME/temp-logs/ $HOME/.weechat/logs
-mv $HOME/temp-weechat.log $HERE/.weechat/weechat.log
+mv $HOME/temp-weechat.log $HOME/.weechat/weechat.log
 echo ''
 
 # matlab startup file
