@@ -1,4 +1,5 @@
 # Link configuration files to home directory
+#TODO: make this less silly
 echo '>> Linking configuration files'
 echo ''
 
@@ -27,6 +28,12 @@ ln -sv $HERE/.weechat/* $HOME/.weechat
 mkdir $HOME/.weechat/logs
 mv $HOME/temp-logs/ $HOME/.weechat/logs
 mv $HOME/temp-weechat.log $HOME/.weechat/weechat.log
+echo ''
+
+# link bitlbee conf file goes to homebrew cellar
+echo '>> sym-linking bitlbee.conf '
+rm /usr/local/Cellar/bitlbee/3.2.2/etc/bitlbee/bitlbee.conf
+ln -sv $HERE/bitlbee.conf /usr/local/Cellar/bitlbee/3.2.2/etc/bitlbee/bitlbee.conf
 echo ''
 
 # matlab startup file
