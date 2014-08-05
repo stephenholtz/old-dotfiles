@@ -36,3 +36,6 @@ export CDPATH=:$HOME/personal_repos/:$HOME/grad_repos/:$HOME/
 export PATH=/usr/local/bin:/usr/local/sbin:/Applications/MATLAB_R2013a.app/bin/maci64:$PATH
 
 source /Users/stephenholtz/.iterm2_shell_integration.zsh
+
+# Powerline :(
+#. /Users/stephenholtz/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh

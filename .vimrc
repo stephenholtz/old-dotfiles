@@ -1,4 +1,4 @@
-" Maintainer: 
+﻿" Maintainer: 
 " "     Stephen Holtz 
 " "     stephenholtz.com
 " " Portions borrowed from:
@@ -107,8 +107,6 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 " NERDCommenter for easy/sexy commenting
 Bundle 'scrooloose/nerdcommenter'
-" powerline for an awesome status line
-Bundle 'Lokaltog/powerline' 
 " vim-repeat, allows plugin maps to be repeated
 Bundle 'tpope/vim-repeat'
 " ctrlp for fuzzy searching
@@ -238,21 +236,18 @@ nmap <leader>e :e!<cr>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme Setup
 
-" Solarized setup
-" syntax on
-" set background=
-" let g:solarized_termtrans = 1
-" colorscheme solarized
-
-" Jellybeans setup
+" Jellybeans
 syntax on
-colorscheme jellybeans
+colorscheme jellybeans 
+let g:jellybeans_use_lowcolor_black=1
 
-" powerline setup using vundle
-" set rtp+={repository_root}/powerline/bindings/vim
-" cp -R ~/.vim/bundle/powerline/powerline/config_files/* ~/.config/powerline
-" *set iterm2 to use powerline patched font for both ascii and non ascii!!
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Powerline was installed with pip
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
+set encoding=utf-8
 set laststatus=2
 set ambiwidth=single
-set noshowmode          " gets rid of the redundant mode description
+set noshowmode
+let g:Powerline_symbols='fancy'
