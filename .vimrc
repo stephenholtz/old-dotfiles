@@ -39,6 +39,7 @@ set encoding=utf8               " Set utf8 as standard encoding and en_US as the
 set ffs=unix,dos,mac            " Use Unix as the standard file type
 
 " Appearance                    set colorscheme is below (after bundle management)
+set t_Co=256
 set lazyredraw                  " Don't redraw while executing macros (good performance config)
 set expandtab                   " Use spaces instead of tabs
 set smarttab                    " Be smart when using tabs
@@ -239,7 +240,7 @@ nmap <leader>e :e!<cr>
 " Jellybeans
 syntax on
 colorscheme jellybeans 
-let g:jellybeans_use_lowcolor_black=1
+"let g:jellybeans_use_lowcolor_black=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Powerline was installed with pip

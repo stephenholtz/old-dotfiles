@@ -37,5 +37,12 @@ export PATH=/usr/local/bin:/usr/local/sbin:/Applications/MATLAB_R2013a.app/bin/m
 
 source /Users/stephenholtz/.iterm2_shell_integration.zsh
 
-# Powerline :(
+# Make the terminal pretty with 256 colors
+export TERM="screen-256color"
+
+# Powerline, add path to let tmux and friends find it
+if [ -d "$HOME/Library/Python/2.7/bin" ]; then
+    PATH="$HOME/Library/Python/2.7/bin:$PATH"
+fi
+# Default powerline is a bit much -- need to tweak
 #. /Users/stephenholtz/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
