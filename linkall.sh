@@ -10,7 +10,6 @@ ln -sv $HERE/{.vimrc,.zshrc,.tmux.conf,.bash_profile,.taskrc} $HOME
 echo ''
 
 # links not in home directory
-
 # Elinks conf
 echo '>> sym-linking elinks.conf'
 rm $HOME/.elinks/elinks.conf
@@ -40,6 +39,15 @@ echo ''
 echo '>> sym-linking matlab startup'
 rm $HOME/Documents/MATLAB/startup.m
 ln -sv $HERE/startup.m $HOME/Documents/MATLAB/startup.m
+echo ''
+
+# vifm (greatest file browser ever made) link, don't link
+# or overwrite history, Trash, help files etc.,
+echo '>> sym-linking vifm files'
+rm -rf $HOME/.vifm/colors
+ln -sv $HERE/.vifm/colors $HOME/.vifm/colors
+rm -rf $HOME/.vifm/vifmrc
+ln -sv $HERE/.vifm/vifmrc $HOME/.vifm/vifmrc
 echo ''
 
 # update my vim bundles
