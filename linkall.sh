@@ -21,12 +21,14 @@ echo ''
 echo '>>> sym-linking weechat folder (maintaining log files)'
 mv $HOME/.weechat/logs $HOME/temp-logs/
 mv $HOME/.weechat/weechat.log $HOME/temp-weechat.log
+mv $HOME/.weechat/irc.conf $HOME/temp-irc.conf
 rm -r $HOME/.weechat/
 mkdir $HOME/.weechat/
 ln -sv $HERE/.weechat/* $HOME/.weechat
 mkdir $HOME/.weechat/logs
 mv $HOME/temp-logs/ $HOME/.weechat/logs
 mv $HOME/temp-weechat.log $HOME/.weechat/weechat.log
+mv $HOME/temp-irc.conf $HOME/.weechat/irc.conf
 echo ''
 
 # link bitlbee conf file goes to homebrew cellar
