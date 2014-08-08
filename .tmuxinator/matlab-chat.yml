@@ -1,0 +1,18 @@
+# ~/.tmuxinator/matlab-chat.yml
+name: matlab-chat
+root: ~/
+
+pre: bitlbee -F
+
+windows:
+  - matlab:
+      layout: main-vertical
+      panes:
+        - ls  
+        - matlab -nosplash -nodesktop 
+  - shell:
+      layout: main-vertical
+      panes:
+          - fortune -l 
+          - brew update
+  - WeeChat: weechat

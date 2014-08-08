@@ -38,7 +38,11 @@ export PATH=/usr/local/bin:/usr/local/sbin:/Applications/MATLAB_R2013a.app/bin/m
 source /Users/stephenholtz/.iterm2_shell_integration.zsh
 
 # Make the terminal pretty with 256 colors
+# required for tmux / vim to work properly as configured
 export TERM="screen-256color"
+
+# Use Tmuxinator for managing tmux sessions (gem install tmuxinator)
+source ~/.tmuxinator/tmuxinator.zsh
 
 # Powerline, add path to let tmux and friends find it
 if [ -d "$HOME/Library/Python/2.7/bin" ]; then

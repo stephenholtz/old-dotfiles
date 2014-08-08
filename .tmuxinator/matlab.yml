@@ -1,0 +1,11 @@
+# ~/.tmuxinator/matlab.yml
+name: matlab
+root: ~/
+
+windows:
+  - matlab:
+      layout: main-vertical
+      panes:
+        - pwd  
+        - matlab -nosplash -nodesktop 
+  - git:

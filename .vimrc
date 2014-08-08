@@ -18,7 +18,7 @@ set number                      " show line numbers
 set wildmenu                    " Turn on the WiLd menu for tab complete etc.,
 set wildignore=*.o,*~,*.pyc     " Ignore compiled files
 set ruler                       " Always show current position
-set cmdheight=2                 " Height of the command bar
+set cmdheight=1                 " Height of the command bar
 set hid                         " A buffer becomes hidden when it is abandoned
 set backspace=eol,start,indent  " Configure backspace so it acts as it should act
 set whichwrap+=<,>,h,l          " Vestigial, unsure of function....
