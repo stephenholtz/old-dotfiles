@@ -58,8 +58,7 @@ set norunexec
 set noiec
 
 " Selected color scheme
-
-colorscheme Default
+colorscheme solarized-dark
 
 " The FUSE_HOME directory will be used as a root dir for all FUSE mounts.
 " Unless it exists with write/exec permissions set, vifm will attempt to
@@ -83,27 +82,22 @@ set wildmenu
 set ignorecase
 set smartcase
 
-" Don't highlight search results automatically
-
-set nohlsearch
+" Highlight search results automatically
+set hlsearch
 
 " Use increment searching (search while typing)
 set incsearch
 
 " Try to leave some space from cursor to upper/lower border in lists
-
 set scrolloff=4
 
 " Don't do to much requests to slow file systems
-
 set slowfs=curlftpfs
 
 " Set custom status line look
-
 set statusline="  %t%= %A %10u:%-7g %15s %20d  "
 
 " :mark mark /full/directory/path [filename]
-
 mark b ~/bin/
 mark h ~/
 
@@ -154,6 +148,7 @@ command vgrep vim "+grep %a"
 
 " Pdf
 filetype *.pdf zathura %f,apvlv %f,xpdf %f
+"fileview *.pdf pdftotext -nopgbrk %c -
 fileview *.pdf pdftotext -nopgbrk %c -
 
 " PostScript
