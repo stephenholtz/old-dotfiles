@@ -1,15 +1,11 @@
-﻿" Maintainer: 
-" "     Stephen Holtz 
-" "     stephenholtz.com
-" " Portions borrowed from:
-" "     https://github.com/amix/vimrc (almost all of sugar from here)
-" "     http://www.astro.ucla.edu/~mperrin/comp/vimrc
-" " Sections:
-" "    -> General
-" "    -> Key mapping
-" "    -> Bundles 
-
-" " => General
+﻿" Vim configuration file, 
+" https://www.github.com/stephenholtz/dotfiles/.vimrc
+"
+" Vim >= 7.4 
+"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" General
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible                " Allow just Vi iMproved
 set history=700                 " Sets how many lines of history VIM has to remember
 set autoread                    " Set to auto read when a file is changed from the outside
@@ -47,7 +43,6 @@ set shiftwidth=4                " 1 tab == 4 spaces
 set tabstop=4
 set guifont=Inconsolata:h14      " installed on macosx (copy in dotfiles/fonts)
 set listchars=tab:»\ ,eol:¬,trail:. " show hidden characters
-
 " Linebreak on 500 characters
 set lbr
 set tw=500
@@ -55,7 +50,7 @@ set tw=500
 set ai   " Auto indent
 set si   " Smart indent
 set wrap " Wrap lines
-"
+
 " Speed up transition from modes (very effective!)
 if ! has('gui_running')
     set ttimeoutlen=10
@@ -67,9 +62,8 @@ if ! has('gui_running')
 endif
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Bundles 
+" Bundles 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 " Use Vundle for bundling plugins
 " Brief help
 " :BundleList          - list configured bundles
@@ -79,7 +73,7 @@ endif
 "
 " see :h vundle for more details or wiki for FAQ
 " To install bundles, just add in below (defaults to github)
-" NOTE: comments after Bundle command are not allowed..
+" NOTE: comments after Bundle command are not allowed
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -96,8 +90,6 @@ Bundle 'altercation/vim-colors-solarized'
 """ Misc plugins
 " surround lets you surround text easily
 Bundle 'tpope/vim-surround'
-" Command-t is an incredibly nice file finder
-Bundle 'wincent/Command-T'
 " BufExplorer is an essential buffer ext
 Bundle 'corntrace/bufexplorer'
 " tabular makes organized, readable code
@@ -112,12 +104,11 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'tpope/vim-repeat'
 " ctrlp for fuzzy searching
 Bundle 'kien/ctrlp.vim'
-" unite searches and displays from many places
-Bundle 'Shougo/unite.vim'
 
 """ Evernote plugins
 " evervim is a clean way to edit / browse notes
 Bundle 'kakkyz81/evervim'
+
 """ Language specific plugins
 " vim-r-plugin for communication b/n vim and R 
 Bundle 'jcfaria/VIM-R-plugin'
@@ -136,14 +127,6 @@ Bundle 'jpalardy/vim-slime'
 " vimux is a plugin to interact with tmux
 Bundle 'benmills/vimux'
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Command-T Setup (from wincent.com/)
-" cd ~/.vim/bundle/Command-T/ruby/command-t
-" ruby extconf.rb
-" make
-let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " matlab setup (mlint compatibility)
 " matlab's bin *must* be in my PATH
@@ -156,6 +139,7 @@ let g:CommandTCancelMap     = ['<ESC>', '<C-c>']
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " R environment setup OSX relies on screen.vim and VIM-R-plugin
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " - Requires installation of VimCom in R: 
 "   chooseCRANmirror()
 "   install.package('devtools')
@@ -199,7 +183,8 @@ let g:ctrlp_switch_buffer = 'Et' " If already open, try to switch instead of ope
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " vimux setup (defaults from doc/vimux.txt) 
-" [Working with MATLAB]
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Works with MATLAB
 " - open tmux pane and run matlab with -nodesktop -nosplash
 " - use commands below to send text, or run scripts!
 
@@ -230,20 +215,27 @@ let g:VimuxUseNearset = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Other Key mapping 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Fast save / reload vimrc
 nmap <leader>w :w!<cr>
 nmap <leader>e :e!<cr>
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Colorscheme Setup
+" Get rid of ex
+nnoremap Q <nop>
 
+" Switch between files quickly
+nmap <leader><leader> <C-^>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Colorscheme
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Jellybeans
 syntax on
 colorscheme jellybeans 
-"let g:jellybeans_use_lowcolor_black=1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Powerline was installed with pip
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
