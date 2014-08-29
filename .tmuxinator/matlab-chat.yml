@@ -8,7 +8,7 @@ windows:
   - matlab:
       layout: main-vertical
       panes:
-        - ls  
+        - cd grad-repos && ls
         - matlab -nosplash -nodesktop 
   - shell:
       layout: main-vertical

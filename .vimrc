@@ -33,6 +33,7 @@ set nowb
 set noswapfile
 set encoding=utf8               " Set utf8 as standard encoding and en_US as the standard language
 set ffs=unix,dos,mac            " Use Unix as the standard file type
+set wrapscan                    " Allow search to wrap (default)
 
 " Appearance                    set colorscheme is below (after bundle management)
 set t_Co=256
@@ -92,6 +93,8 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'tpope/vim-surround'
 " BufExplorer is an essential buffer ext
 Bundle 'corntrace/bufexplorer'
+" Mini Buffer Explorer!
+Bundle 'fholgado/minibufexpl'
 " tabular makes organized, readable code
 Bundle 'godlygeek/tabular'
 " NERDTree for sweet file browsing
@@ -225,6 +228,23 @@ nnoremap Q <nop>
 
 " Switch between files quickly
 nmap <leader><leader> <C-^>
+
+" Quickly comment with Tabularize
+"if exists(":Tabularize")
+    " Line up the = in a block of text
+    nmap <leader>t= :Tabularize /=<CR>
+    vmap <leader>t= :Tabularize /=<CR>
+    " Line up text that follows the colon
+    nmap <leader>t: :Tabularize /:\zs<CR>
+    vmap <leader>t: :Tabularize /:\zs<CR>
+    " Line up the % or # or //
+    nmap <leader>t% :Tabularize /%<CR>
+    vmap <leader>t% :Tabularize /%<CR>
+    nmap <leader>t# :Tabularize /#<CR>
+    vmap <leader>t# :Tabularize /#<CR>
+    nmap <leader>t/ :Tabularize /\/\<CR>
+    vmap <leader>t/ :Tabularize /\/\<CR>
+"endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme
