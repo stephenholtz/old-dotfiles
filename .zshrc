@@ -50,3 +50,54 @@ if [ -d "$HOME/Library/Python/2.7/bin" ]; then
 fi
 # Default powerline is a bit much -- need to tweak
 #. /Users/stephenholtz/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
+
+# Antigen (similar to vundle, just for zsh) setup
+#TODO: should be held in a hiden linked submodule of my dotfiles folder
+export ANTIGEN_DEFAULT_REPO_URL=https://github.com/robbyrussell/oh-my-zsh.git
+export ADOTDIR=$HOME/.antigen
+source ~/dotfiles/antigen/antigen.zsh
+
+# Use the oh-my-zsh library (lots of themes collected) (default above)
+antigen use oh-my-zsh
+
+# Set bundles
+antigen bundles <<EOBUNDLES
+# tools
+pip
+git
+brew
+gem
+
+# tmux
+tmux
+tmuxinator
+
+# vim
+
+vundle
+
+# Useful guessing
+command-not-found
+
+# have more completions
+zsh-users/zsh-completions src
+
+# zsh port of fish
+zsh-users/zsh-history-substring-search
+
+# Very nice syntax highlighting
+zsh-users/zsh-syntax-highlighting
+
+# have my man pages colored
+colored-man
+
+EOBUNDLES
+
+# Use a zsh theme
+#antigen theme fox
+#antigen theme robbyrussell/oh-my-zsh themes/apple
+#antigen theme robbyrussell/oh-my-zsh themes/gnzh
+antigen theme desyncr/zshrc themes/af-magic-mod
+
+# Apply all settings
+antigen apply

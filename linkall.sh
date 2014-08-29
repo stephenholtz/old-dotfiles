@@ -52,6 +52,13 @@ rm -rf $HOME/.vifm/vifmrc
 ln -sv $HERE/.vifm/vifmrc $HOME/.vifm/vifmrc
 echo ''
 
+# Link antigen
+# TODO: finish this and update other files
+#echo '>>> sym-linking antigen'
+#rm -rf $HOME/.antigen
+#ln -sv $HERE/antigen $HOME/.antigen
+#echo ''
+
 # update my vim bundles
 #echo '>>> Updating vim bundles'
 #vim +BundleInstall! +BundleClean
