@@ -18,7 +18,9 @@ set(0,  'DefaultFigureColor',[1 1 1],...
 %% Path changes
 
 % restore default path
-restoredefaultpath
+restoredefaultpath; 
+% save as default to avoid path not found warnings
+savepath;
 
 % Add paths
 pathsToAdd = {  '/Users/stephenholtz/matlab-utils',...
@@ -38,3 +40,4 @@ clear pathsToAdd startupLoc path
 
 % Turn off the obnoxious beep (works in OSX, maybe not others)
 beep off
+

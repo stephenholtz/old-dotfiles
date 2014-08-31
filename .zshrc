@@ -27,6 +27,9 @@ RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 # Set up common aliases
 alias clc='echo use \^l or clear dumbass'
 
+# reload zsh
+alias zsh_reload=". ~/.zshrc && echo 'zsh reloaded from ~/.zshrc'"
+
 # matlab specific
 alias matlab='. /Applications/MATLAB_R2014b.app/bin/matlab'
 alias matlabcl='echo Opening MATLAB 2014b with -nosplash -nodesktop; /Applications/MATLAB_R2014b.app/bin/matlab -nosplash -nodesktop'
@@ -68,12 +71,14 @@ git
 brew
 gem
 
+# python pep8 and pylint completions
+autopep8
+
 # tmux
 tmux
 tmuxinator
 
 # vim
-
 vundle
 
 # Useful guessing
@@ -91,13 +96,14 @@ zsh-users/zsh-syntax-highlighting
 # have my man pages colored
 colored-man
 
+# MPB
+battery
+
 EOBUNDLES
 
 # Use a zsh theme
-#antigen theme fox
-#antigen theme robbyrussell/oh-my-zsh themes/apple
-#antigen theme robbyrussell/oh-my-zsh themes/gnzh
-antigen theme desyncr/zshrc themes/af-magic-mod
+#antigen theme robbyrussell/zshrc themes/af-magic
+antigen theme robbyrussell/oh-my-zsh themes/candy
 
 # Apply all settings
 antigen apply
