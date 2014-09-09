@@ -17,6 +17,10 @@ set(0,  'DefaultFigureColor',[1 1 1],...
 
 %% Path changes
 
+% reset the toolboxcache
+% TODO: determine how matlab detects a stale cache and wrap this call
+rehash toolboxcache
+
 % restore default path
 restoredefaultpath; 
 % save as default to avoid path not found warnings

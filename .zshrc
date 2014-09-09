@@ -24,15 +24,24 @@ HISTFILE=~/.zsh_history
 PROMPT="%{$fg[red]%}%n%{$reset_color%}@%{$fg[blue]%}%m %{$fg_no_bold[yellow]%}%1~ %{$reset_color%}%#"" "
 RPROMPT="[%{$fg_no_bold[yellow]%}%?%{$reset_color%}]"
 
-# Set up common aliases
-alias clc='echo use \^l or clear dumbass'
-
 # reload zsh
 alias zsh_reload=". ~/.zshrc && echo 'zsh reloaded from ~/.zshrc'"
 
 # matlab specific
 alias matlab='. /Applications/MATLAB_R2014b.app/bin/matlab'
 alias matlabcl='echo Opening MATLAB 2014b with -nosplash -nodesktop; /Applications/MATLAB_R2014b.app/bin/matlab -nosplash -nodesktop'
+alias clc='echo use \^l or clear dumbass' # break my terrible habit
+
+# git (duped from zsh plugins)
+alias g='git'
+
+# taskwarrior (some already from zsh plugins)
+# NOTE: tX is also aliased to a number of tmux actions
+alias tt='task'
+alias ttp='task project'
+alias ttl='task list'
+alias tta='task add'
+alias ttd='task done'
 
 # cdpath/path setup
 export CDPATH=:$HOME/personal_repos/:$HOME/grad_repos/:$HOME/
@@ -42,6 +51,7 @@ source /Users/stephenholtz/.iterm2_shell_integration.zsh
 
 # Make the terminal pretty with 256 colors
 # required for tmux / vim to work properly as configured
+# NOTE: may break some ssh, change to xterm if fails
 export TERM="screen-256color"
 
 # Use Tmuxinator for managing tmux sessions (gem install tmuxinator)
@@ -70,6 +80,7 @@ pip
 git
 brew
 gem
+taskwarrior
 
 # python pep8 and pylint completions
 autopep8
