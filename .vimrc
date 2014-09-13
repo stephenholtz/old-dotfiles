@@ -105,8 +105,10 @@ Bundle 'scrooloose/syntastic'
 Bundle 'scrooloose/nerdcommenter'
 " vim-repeat, allows plugin maps to be repeated
 Bundle 'tpope/vim-repeat'
-" ctrlp for fuzzy searching
+" ctrlp for fuzzy searching (also ctags)
 Bundle 'kien/ctrlp.vim'
+" silver surfer integration
+Bundle 'rking/ag.vim'
 
 """ Evernote plugins
 " evervim is a clean way to edit / browse notes

@@ -64,6 +64,9 @@ fi
 # Default powerline is a bit much -- need to tweak
 #. /Users/stephenholtz/Library/Python/2.7/lib/python/site-packages/powerline/bindings/zsh/powerline.zsh
 
+# For homebrew, explicitly set the applications directory
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/opt/homebrew-cask/Caskroom"
+
 # Antigen (similar to vundle, just for zsh) setup
 #TODO: should be held in a hiden linked submodule of my dotfiles folder
 export ANTIGEN_DEFAULT_REPO_URL=https://github.com/robbyrussell/oh-my-zsh.git
