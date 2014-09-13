@@ -67,6 +67,12 @@ fi
 # For homebrew, explicitly set the applications directory
 export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/opt/homebrew-cask/Caskroom"
 
+# use rbenv to manage different ruby installs
+export PATH="$HOME/.rbenv/bin:$PATH"
+if which rbenv > /dev/null; then 
+    eval "$(rbenv init -)" 
+fi
+
 # Antigen (similar to vundle, just for zsh) setup
 #TODO: should be held in a hiden linked submodule of my dotfiles folder
 export ANTIGEN_DEFAULT_REPO_URL=https://github.com/robbyrussell/oh-my-zsh.git
