@@ -32,6 +32,11 @@ alias matlab='. /Applications/MATLAB_R2014b.app/bin/matlab'
 alias matlabcl='echo Opening MATLAB 2014b with -nosplash -nodesktop; /Applications/MATLAB_R2014b.app/bin/matlab -nosplash -nodesktop'
 alias clc='echo use \^l or clear dumbass' # break my terrible habit
 
+# Mathmatica notebook is very self contained
+alias mathematica="/Applications/Mathematica.app/Contents/MacOS/Mathematica"
+alias mathscript="/Applications/Mathematica.app/Contents/MacOS/MathematicaScript"
+alias mathcl="/Applications/Mathematica.app/Contents/MacOS/MathKernel"
+
 # git (duped from zsh plugins)
 alias g='git'
 
