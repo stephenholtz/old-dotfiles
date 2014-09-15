@@ -37,3 +37,6 @@ alias clc='echo it is ^l dumbass'
 alias pg='ping www.google.com'
 export PATH=usr/local/sbin:$PATH
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+
+# added by Anaconda 2.0.1 installer
+export PATH="/Users/stephenholtz/anaconda/bin:$PATH"

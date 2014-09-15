@@ -32,6 +32,12 @@ alias matlab='. /Applications/MATLAB_R2014b.app/bin/matlab'
 alias matlabcl='echo Opening MATLAB 2014b with -nosplash -nodesktop; /Applications/MATLAB_R2014b.app/bin/matlab -nosplash -nodesktop'
 alias clc='echo use \^l or clear dumbass' # break my terrible habit
 
+# Anaconda / Python (ipython should be from anaconda)
+alias anaconda="$HOME/anaconda/bin/python"
+alias anaconda3="$HOME/anaconda/bin/python3"
+alias ipython="$HOME/anaconda/bin/ipython"
+alias ipy=ipython
+
 # Mathmatica notebook is very self contained
 alias mathematica="/Applications/Mathematica.app/Contents/MacOS/Mathematica"
 alias mathscript="/Applications/Mathematica.app/Contents/MacOS/MathematicaScript"
@@ -77,6 +83,9 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then 
     eval "$(rbenv init -)" 
 fi
+# use anaconda as my python environment
+export PATH="$PATH:$HOME/anaconda/bin/"
+
 
 # Antigen (similar to vundle, just for zsh) setup
 #TODO: should be held in a hiden linked submodule of my dotfiles folder
