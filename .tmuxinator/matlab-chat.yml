@@ -2,17 +2,19 @@
 name: matlab-chat
 root: ~/
 
-pre: bitlbee -F
+pre:
+    - killall weechat &> /dev/null
+    - bitlbee -F &> /dev/null
 
 windows:
   - matlab:
       layout: main-vertical
       panes:
-        - cd grad-repos && ls
+        - cd ~/code/
         - matlab -nosplash -nodesktop 
   - shell:
       layout: main-vertical
       panes:
-          - fortune -l 
-          - brew update
+        - brew update && cd ~/code
+        - cd ~/dotfiles
   - WeeChat: weechat

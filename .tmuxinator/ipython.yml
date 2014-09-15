@@ -1,0 +1,25 @@
+# ~/.tmuxinator/ipython.yml
+name: ipython
+root: ~/
+
+pre: 
+    - echo "Updating conda / anaconda / homebrew"
+    - brew update
+    - conda update conda
+    - conda update anaconda
+    - echo "Setting up irc"
+    - killall weechat &> /dev/null
+    - killall bitlbee &> /dev/null && bitlbee -F
+
+windows:
+  - main:
+      layout: main-vertical
+      panes:
+        - cd ~/code
+        - ipython
+  - git:
+      layout: main-vertical
+      panes:
+          - cd ~/code
+          - cd ~/dotfiles
+  - WeeChat: weechat

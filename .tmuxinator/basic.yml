@@ -8,11 +8,10 @@ windows:
   - main:
       layout: main-vertical
       panes:
-        - ls
+        - 
         - brew update 
-  - shell:
+  - git:
       layout: main-vertical
       panes:
-          - fortune -l 
-          - cd dotfiles && pwd
-  - WeeChat: if [[ ! -z $(pgrep "weechat") ]]; then; killall weechat; fi && bitlbee -F && weechat
+          - cd ~/code 
+          - cd ~/dotfiles 

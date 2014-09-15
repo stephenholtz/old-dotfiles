@@ -6,6 +6,6 @@ windows:
   - matlab:
       layout: main-vertical
       panes:
-        - pwd  
+        - 
         - matlab -nosplash -nodesktop 
   - git:
