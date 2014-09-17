@@ -54,12 +54,14 @@ alias tta='task add'
 alias ttd='task done'
 
 ## PATH
-# Add matlab
-export PATH="/Applications/MATLAB_R2013a.app/bin/maci64:$PATH"
-# Ensure brew commands work
+# brew commands 
 export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
-# cdpath/path 
-export CDPATH=:$HOME/personal_repos/:$HOME/grad_repos/:$HOME/
+# matlab
+export PATH="/Applications/MATLAB_R2013a.app/bin/maci64:$PATH"
+# go
+export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+# cdpath
+export CDPATH="$HOME:$HOME/code/personal:$HOME/code/grad:"
 source /Users/stephenholtz/.iterm2_shell_integration.zsh
 
 # Make the terminal pretty with 256 colors
