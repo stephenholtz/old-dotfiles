@@ -60,6 +60,7 @@ export PATH="/usr/local/bin:/usr/local/sbin:$PATH"
 export PATH="/Applications/MATLAB_R2013a.app/bin/maci64:$PATH"
 # go
 export PATH="$PATH:/usr/local/opt/go/libexec/bin"
+export GOROOT="/usr/local/go"
 # cdpath
 export CDPATH="$HOME:$HOME/code/personal:$HOME/code/grad:"
 source /Users/stephenholtz/.iterm2_shell_integration.zsh
