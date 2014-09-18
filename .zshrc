@@ -86,11 +86,15 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 if which rbenv > /dev/null; then 
     eval "$(rbenv init -)" 
 fi
+rbenv global 2.1.2
 
 # use anaconda as my python environment
 if [ -d $HOME/anaconda ]; then
     export PATH="$PATH:$HOME/anaconda/bin/"
 fi
+
+# Set up fasd (antigen handles some)
+eval "$(fasd --init zsh-hook zsh-ccomp zsh-wcomp)"
 
 ## ANTIGEN
 # similar to vundle, only for zsh 
@@ -103,6 +107,7 @@ antigen use oh-my-zsh
 # Set bundles
 antigen bundles <<EOBUNDLES
 # tools
+fasd
 pip
 git
 brew
