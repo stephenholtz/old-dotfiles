@@ -1,15 +1,19 @@
 [user]
-	name = stephenholtz
+	name = Stephen Holtz 
 	email = git@holtz.email
-	name = Stephen
-	name = Stephen
-	name = Stephen
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = auto
 [credential]
 	helper = osxkeychain
 	file = /Users/stephenholtz/.ssh/id_rsa.pub
 [core]
 	autocrlf = input
 	safecrlf = true
+    editor = vim
+    pager = less -R
 [alias]
     co = checkout
     ci = commit
@@ -18,4 +22,3 @@
     hist = log --pretty=format:'%h %ad | %s%d [%an]' --graph --date=short
     type = cat-file -t
     dump = cat-file -p
-
