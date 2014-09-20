@@ -3,7 +3,12 @@ autoload -U colors && colors
 
 # Set environmental variables
 export EDITOR="vim"
-export PAGER="less"
+export GIT_EDITOR="vim"
+if hash most > /dev/null; then
+    export PAGER="most"
+else
+    export PAGER="less"
+fi
 
 # use the emacs keymap by default 
 bindkey -e 
