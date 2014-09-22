@@ -9,6 +9,18 @@ rm -r $HOME/{.vimrc,.zshrc,.tmux.conf,.bash_profile,.taskrc,.tmuxinator}
 ln -sv $HERE/{.vimrc,.zshrc,.tmux.conf,.bash_profile,.taskrc,.tmuxinator} $HOME
 echo ''
 
+# Link vundle 
+echo '>>> sym-linking vundle'
+rm -rf $HOME/.vim/bundle/vundle
+ln -sv $HERE/vundle $HOME/.vim/bundle/vundle
+echo ''
+
+# Link antigen
+echo '>>> sym-linking antigen'
+rm -rf $HOME/.antigen
+ln -sv $HERE/antigen $HOME/.antigen
+echo ''
+
 # links not in home directory
 # Elinks conf
 echo '>>> sym-linking elinks.conf'
@@ -51,13 +63,6 @@ ln -sv $HERE/.vifm/colors $HOME/.vifm/colors
 rm -rf $HOME/.vifm/vifmrc
 ln -sv $HERE/.vifm/vifmrc $HOME/.vifm/vifmrc
 echo ''
-
-# Link antigen
-# TODO: finish this and update other files
-#echo '>>> sym-linking antigen'
-#rm -rf $HOME/.antigen
-#ln -sv $HERE/antigen $HOME/.antigen
-#echo ''
 
 # update my vim bundles
 #echo '>>> Updating vim bundles'
