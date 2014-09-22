@@ -78,9 +78,8 @@ export TERM="screen-256color"
 source ~/.tmuxinator/tmuxinator.zsh
 
 # Powerline, add python to path pip by default sticks installs here
-# TODO find a better way
 if [ -d "$HOME/Library/Python/2.7/bin" ]; then
-    PATH="$HOME/Library/Python/2.7/bin:$PATH"
+    export PATH="$HOME/Library/Python/2.7/bin:$PATH"
 fi
 
 # For homebrew, explicitly set the applications directory
