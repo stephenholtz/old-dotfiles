@@ -67,70 +67,70 @@ endif
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use Vundle for bundling plugins
 " Brief help
-" :BundleList          - list configured bundles
-" :BundleInstall(!)    - install(update) bundles
-" :BundleSearch(!) foo - search(or refresh cache first) for foo
-" :BundleClean(!)      - confirm(or auto-approve) removal of unused bundles
+" :PluginList          - list configured bundles
+" :PluginInstall(!)    - install(update) bundles
+" :PluginSearch(!) foo - search(or refresh cache first) for foo
+" :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
 "
 " see :h vundle for more details or wiki for FAQ
 " To install bundles, just add in below (defaults to github)
 " NOTE: comments after Bundle command are not allowed
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+set rtp+=$HOME/.vim/bundle/vundle/
+call vundle#begin()
 
 " vundle to easily manage plugins
-Bundle 'gmarik/vundle'
+Plugin 'gmarik/vundle'
 
 """ Colorscheme plugins
 " jellybean colorscheme
-Bundle 'https://github.com/nanotech/jellybeans.vim'
+Plugin 'https://github.com/nanotech/jellybeans.vim'
 " solarized is a very nice color setup
-Bundle 'altercation/vim-colors-solarized'
+Plugin 'altercation/vim-colors-solarized'
 
 """ Misc plugins
 " surround lets you surround text easily
-Bundle 'tpope/vim-surround'
+Plugin 'tpope/vim-surround'
 " BufExplorer is an essential buffer ext
-Bundle 'corntrace/bufexplorer'
+Plugin 'corntrace/bufexplorer'
 " Mini Buffer Explorer!
-Bundle 'fholgado/minibufexpl'
+Plugin 'fholgado/minibufexpl'
 " tabular makes organized, readable code
-Bundle 'godlygeek/tabular'
+Plugin 'godlygeek/tabular'
 " NERDTree for sweet file browsing
-Bundle 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'
 " Syntastic for syntax checking
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 " NERDCommenter for easy/sexy commenting
-Bundle 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdcommenter'
 " vim-repeat, allows plugin maps to be repeated
-Bundle 'tpope/vim-repeat'
+Plugin 'tpope/vim-repeat'
 " ctrlp for fuzzy searching (also ctags)
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 " silver surfer integration
-Bundle 'rking/ag.vim'
+Plugin 'rking/ag.vim'
 
 """ Evernote plugins
 " evervim is a clean way to edit / browse notes
-Bundle 'kakkyz81/evervim'
+Plugin 'kakkyz81/evervim'
 
 """ Language specific plugins
 " vim-r-plugin for communication b/n vim and R 
-Bundle 'jcfaria/VIM-R-plugin'
+Plugin 'jcfaria/VIM-R-plugin'
 " split shell within vim required by VimLab
-Bundle 'ervandew/screen'
+Plugin 'ervandew/screen'
 " VimLab for matlab useage (tmux / screen.vim reqd)
-Bundle "dajero/VimLab" 
+Plugin "dajero/VimLab" 
 " matlab support (only working one for some reason)
-Bundle 'djoshea/vim-matlab'
+Plugin 'djoshea/vim-matlab'
 " vim-matlab-fold for folding like in the matlab editor
-Bundle 'djoshea/vim-matlab-fold'
+Plugin 'djoshea/vim-matlab-fold'
 
 "" REPL interactions
 " vim-slime will send text to tmux etc., 
-Bundle 'jpalardy/vim-slime' 
+Plugin 'jpalardy/vim-slime' 
 " vimux is a plugin to interact with tmux
-Bundle 'benmills/vimux'
+Plugin 'benmills/vimux'
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " matlab setup (mlint compatibility)
