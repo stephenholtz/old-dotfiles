@@ -4,3 +4,9 @@
 [submodule "Vundle.vim"]
 	path = Vundle.vim
 	url = https://github.com/gmarik/Vundle.vim.git
+[submodule "colors/base16-iterm2"]
+	path = colors/base16-iterm2
+	url = https://github.com/chriskempson/base16-iterm2.git
+[submodule "colors/base16-gnome-terminal"]
+	path = colors/base16-gnome-terminal
+	url = https://github.com/chriskempson/base16-gnome-terminal.git
