@@ -135,12 +135,20 @@ zsh-users/zsh-history-substring-search
 zsh-users/zsh-syntax-highlighting
 # have my man pages colored
 colored-man
+# colorthemes
+chriskempson/base16-shell
+chriskempson/base16-iterm2
 # MPB
 battery
 EOBUNDLES
 
 # Use a zsh theme
 antigen theme robbyrussell/oh-my-zsh themes/candy
+
+# Base16 Shell
+BASE16_SCHEME="chalk"
+BASE16_SHELL="$HOME/.config/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
 
 # Apply all settings
 antigen apply

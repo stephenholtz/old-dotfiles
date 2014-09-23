@@ -1,8 +1,6 @@
 ﻿" Vim configuration file, 
 " https://www.github.com/stephenholtz/dotfiles/.vimrc
 "
-" Vim >= 7.4 
-"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -52,85 +50,56 @@ set ai   " Auto indent
 set si   " Smart indent
 set wrap " Wrap lines
 
-" Speed up transition from modes (very effective!)
-if ! has('gui_running')
-    set ttimeoutlen=10
-    augroup FastEscape
-        autocmd!
-        au InsertEnter * set timeoutlen=0
-        au InsertLeave * set timeoutlen=1000
-    augroup END
-endif
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Bundles 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use Vundle for bundling plugins
-" Brief help
 " :PluginList          - list configured bundles
 " :PluginInstall(!)    - install(update) bundles
 " :PluginSearch(!) foo - search(or refresh cache first) for foo
 " :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
-"
 " see :h vundle for more details or wiki for FAQ
-" To install bundles, just add in below (defaults to github)
-" NOTE: comments after Bundle command are not allowed
 
-set rtp+=$HOME/.vim/bundle/vundle/
+" To install bundles, just add in below (defaults to github)
+filetype off        " Required by vundle
+" set the runtime path to include Vundle and initialize
+set rtp+=$HOME/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 " vundle to easily manage plugins
-Plugin 'gmarik/vundle'
+Plugin 'gmarik/Vundle.vim'
 
 """ Colorscheme plugins
-" jellybean colorscheme
-Plugin 'https://github.com/nanotech/jellybeans.vim'
-" solarized is a very nice color setup
-Plugin 'altercation/vim-colors-solarized'
+Plugin 'chriskempson/base16-vim'          " well maintained colorschemes
 
 """ Misc plugins
-" surround lets you surround text easily
-Plugin 'tpope/vim-surround'
-" BufExplorer is an essential buffer ext
-Plugin 'corntrace/bufexplorer'
-" Mini Buffer Explorer!
-Plugin 'fholgado/minibufexpl'
-" tabular makes organized, readable code
-Plugin 'godlygeek/tabular'
-" NERDTree for sweet file browsing
-Plugin 'scrooloose/nerdtree'
-" Syntastic for syntax checking
-Plugin 'scrooloose/syntastic'
-" NERDCommenter for easy/sexy commenting
-Plugin 'scrooloose/nerdcommenter'
-" vim-repeat, allows plugin maps to be repeated
-Plugin 'tpope/vim-repeat'
-" ctrlp for fuzzy searching (also ctags)
-Plugin 'kien/ctrlp.vim'
-" silver surfer integration
-Plugin 'rking/ag.vim'
+Plugin 'tpope/vim-surround'         " surround text easily
+Plugin 'corntrace/bufexplorer'      " essential buffer ext
+Plugin 'fholgado/minibufexpl'       " Mini bufferexplorer
+Plugin 'godlygeek/tabular'          " organized, readable code
+Plugin 'scrooloose/nerdtree'        " file browsing
+Plugin 'scrooloose/syntastic'       " syntax checking
+Plugin 'scrooloose/nerdcommenter'   " easy/sexy commenting
+Plugin 'tpope/vim-repeat'           " allows plugin maps to be repeated
+Plugin 'kien/ctrlp.vim'             " fuzzy searching (also ctags)
+Plugin 'rking/ag.vim'               " silver searcher integration
 
 """ Evernote plugins
-" evervim is a clean way to edit / browse notes
-Plugin 'kakkyz81/evervim'
+Plugin 'kakkyz81/evervim'           " clean way to edit / browse notes
 
 """ Language specific plugins
-" vim-r-plugin for communication b/n vim and R 
-Plugin 'jcfaria/VIM-R-plugin'
-" split shell within vim required by VimLab
-Plugin 'ervandew/screen'
-" VimLab for matlab useage (tmux / screen.vim reqd)
-Plugin "dajero/VimLab" 
-" matlab support (only working one for some reason)
-Plugin 'djoshea/vim-matlab'
-" vim-matlab-fold for folding like in the matlab editor
-Plugin 'djoshea/vim-matlab-fold'
+Plugin 'jcfaria/VIM-R-plugin'       " for communication b/n vim and R 
+Plugin 'ervandew/screen'            " split shell within vim required by VimLab
+Plugin "dajero/VimLab"              " matlab useage (tmux / screen.vim reqd)
+Plugin 'djoshea/vim-matlab'         " matlab support
+Plugin 'djoshea/vim-matlab-fold'    " folding like in the matlab editor
 
 "" REPL interactions
-" vim-slime will send text to tmux etc., 
-Plugin 'jpalardy/vim-slime' 
-" vimux is a plugin to interact with tmux
-Plugin 'benmills/vimux'
+Plugin 'jpalardy/vim-slime'         " send text to tmux etc.
+Plugin 'benmills/vimux'             " interact with tmux
+
+call vundle#end()                   " required
+filetype plugin indent on           " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " matlab setup (mlint compatibility)
@@ -251,12 +220,12 @@ nmap <leader><leader> <C-^>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Jellybeans
+"let base16colorspace=256  " Access colors present in 256 colorspace
 syntax on
-colorscheme jellybeans 
+colorscheme base16-chalk
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Powerline was installed with pip
+" Powerline ( installed with pip )
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
