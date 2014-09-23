@@ -220,10 +220,10 @@ nmap <leader><leader> <C-^>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let base16colorspace=256  " Access colors present in 256 colorspace
-syntax on
-set background=dark
-colorscheme base16-tomorrow
+set background=dark         " User dark version of base16 colors
+syntax on                   " Required
+let base16colorspace=256    " Access colors present in 256 colorspace
+colorscheme base16-eighties
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Powerline ( installed with pip )

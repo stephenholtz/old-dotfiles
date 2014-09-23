@@ -23,15 +23,12 @@ SAVEHIST=1000
 HISTFILE=~/.zsh_history
 
 ## Aliases
-
 # reload zsh
 alias zsh_reload=". ~/.zshrc && echo 'zsh reloaded from ~/.zshrc'"
-
 # matlab specific
 alias matlab='. /Applications/MATLAB_R2014b.app/bin/matlab'
 alias matlabcl='echo Opening MATLAB 2014b with -nosplash -nodesktop; /Applications/MATLAB_R2014b.app/bin/matlab -nosplash -nodesktop'
 alias clc='echo use \^l or clear dumbass' # break my terrible habit
-
 # Anaconda / Python (ipython should be from anaconda)
 if [ -d $HOME/anaconda ]; then
     alias anaconda="$HOME/anaconda/bin/python"
@@ -39,17 +36,14 @@ if [ -d $HOME/anaconda ]; then
     alias ipython="$HOME/anaconda/bin/ipython"
     alias ipy=ipython
 fi
-
 # Mathmatica notebook is very self contained
 if [ -d /Applications/Mathematica.app ]; then
     alias mathematica="/Applications/Mathematica.app/Contents/MacOS/Mathematica"
     alias mathscript="/Applications/Mathematica.app/Contents/MacOS/MathematicaScript"
     alias mathcl="/Applications/Mathematica.app/Contents/MacOS/MathKernel"
 fi
-
 # git
 alias g='git'
-
 # taskwarrior (some already from zsh plugins)
 # NOTE: tX is also aliased to a number of tmux actions
 alias t='task'
@@ -135,20 +129,16 @@ zsh-users/zsh-history-substring-search
 zsh-users/zsh-syntax-highlighting
 # have my man pages colored
 colored-man
-# colorthemes
-chriskempson/base16-shell
-chriskempson/base16-iterm2
 # MPB
 battery
 EOBUNDLES
 
 # Use a zsh theme
 antigen theme robbyrussell/oh-my-zsh themes/candy
+# Apply all settings
+antigen apply
 
-# Base16 Shell
+# Base16 Shell on top of antigen theme (meh)
 BASE16_SCHEME="tomorrow"
 BASE16_SHELL="$HOME/.colors/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL
-
-# Apply all settings
-antigen apply
