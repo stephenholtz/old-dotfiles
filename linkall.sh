@@ -7,6 +7,13 @@ echo '>>> sym-linking config files' $HERE 'to' $HOME
 rm -r $HOME/{.vimrc,.zshrc,.tmux.conf,.bash_profile,.taskrc,.tmuxinator,.gitconfig}
 ln -sv $HERE/{.vimrc,.zshrc,.tmux.conf,.bash_profile,.taskrc,.tmuxinator,.gitconfig} $HOME
 
+# Link colors
+echo '>>> sym-linking shell colors'
+if [ -d $HOME/.colors/ ]; then
+  rm -rf $HOME/.colors/
+fi
+ln -sv $HERE/.colors $HOME/colors
+
 # Link vundle 
 echo '>>> sym-linking Vundle'
 if [ ! -d $HOME/.vim/bundle/ ]; then
