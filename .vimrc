@@ -90,7 +90,7 @@ Plugin 'kakkyz81/evervim'           " clean way to edit / browse notes
 """ Language specific plugins
 Plugin 'jcfaria/VIM-R-plugin'       " for communication b/n vim and R 
 Plugin 'ervandew/screen'            " split shell within vim required by VimLab
-Plugin "dajero/VimLab"              " matlab useage (tmux / screen.vim reqd)
+Plugin 'dajero/VimLab'              " matlab useage (tmux / screen.vim reqd)
 Plugin 'djoshea/vim-matlab'         " matlab support
 Plugin 'djoshea/vim-matlab-fold'    " folding like in the matlab editor
 
@@ -220,9 +220,10 @@ nmap <leader><leader> <C-^>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"let base16colorspace=256  " Access colors present in 256 colorspace
+let base16colorspace=256  " Access colors present in 256 colorspace
 syntax on
-colorscheme base16-chalk
+set background=dark
+colorscheme base16-tomorrow
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Powerline ( installed with pip )
