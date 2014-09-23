@@ -44,4 +44,3 @@ clear pathsToAdd startupLoc path
 
 % Turn off the obnoxious beep (works in OSX, maybe not others)
 beep off
-
