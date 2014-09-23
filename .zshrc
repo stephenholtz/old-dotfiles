@@ -109,8 +109,12 @@ fasd
 pip
 git
 brew
+rsync
+node
+npm
 gem
 taskwarrior
+virtualenvwrapper
 # python pep8 and pylint completions
 python
 autopep8
