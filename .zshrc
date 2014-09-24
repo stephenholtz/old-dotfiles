@@ -4,7 +4,7 @@ autoload -U colors && colors
 # Set environmental variables
 export EDITOR="vim"
 export GIT_EDITOR="vim"
-if hash most > /dev/null; then
+if hash most &> /dev/null; then
     export PAGER="most"
 else
     export PAGER="less"
@@ -62,7 +62,8 @@ export PATH="$PATH:/usr/local/opt/go/libexec/bin"
 export GOROOT="/usr/local/go"
 # cdpath
 export CDPATH="$HOME:$HOME/code/personal:$HOME/code/grad:"
-source /Users/stephenholtz/.iterm2_shell_integration.zsh
+# not sure where I found this...
+[[ -f ${HOME}/.iterm2_shell_integration.zsh ]] && source ${HOME}/.iterm2_shell_integration.zsh
 
 # Make the terminal pretty with 256 colors
 # required for tmux / vim to work properly as configured
