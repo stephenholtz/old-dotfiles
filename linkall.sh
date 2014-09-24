@@ -10,7 +10,7 @@ ln -sv $HERE/{.vimrc,.zshrc,.tmux.conf,.bash_profile,.taskrc,.tmuxinator,.gitcon
 # Link colors
 echo '>>> sym-linking shell colors'
 if [ -d $HOME/.colors/ ]; then
-  rm -vf $HOME/.colors/
+  rm -vrf $HOME/.colors/
 fi
 mkdir -vp $HOME/.colors/
 ln -sv $HERE/colors/* $HOME/.colors/
