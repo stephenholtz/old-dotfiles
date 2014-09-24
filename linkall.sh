@@ -9,10 +9,10 @@ ln -sv $HERE/{.vimrc,.zshrc,.tmux.conf,.bash_profile,.taskrc,.tmuxinator,.gitcon
 
 # Link colors
 echo '>>> sym-linking shell colors'
-if [ -d $HOME/.colors/ ]; then
+if [ -h $HOME/.colors/ ]; then
   rm -rf $HOME/.colors/
 fi
-ln -sv $HERE/.colors $HOME/colors
+ln -sv $HERE/colors $HOME/.colors
 
 # Link vundle 
 echo '>>> sym-linking Vundle'
@@ -50,7 +50,7 @@ if [ -d $HOME/.weechat ]; then
 fi
 mkdir -pv $HOME/.weechat/
 ln -sv $HERE/.weechat/* $HOME/.weechat
-mkdir $HOME/.weechat/logs
+mkdir -pv $HOME/.weechat/logs
 if [ -d $HOME/temp-weechat.log ]; then
     mv $HOME/temp-logs/ $HOME/.weechat/logs
     mv $HOME/temp-weechat.log $HOME/.weechat/weechat.log
