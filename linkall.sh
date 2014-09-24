@@ -9,8 +9,8 @@ ln -sv $HERE/{.vimrc,.zshrc,.tmux.conf,.bash_profile,.taskrc,.tmuxinator,.gitcon
 
 # Link colors
 echo '>>> sym-linking shell colors'
-if [ -h $HOME/.colors/ ]; then
-  rm -rf $HOME/.colors/
+if [ -e $HOME/.colors/ ]; then
+  rm -vf $HOME/.colors/
 fi
 ln -sv $HERE/colors $HOME/.colors
 
@@ -84,4 +84,7 @@ ln -sv $HERE/.vifm/colors $HOME/.vifm/colors
 
 # iterm2 shell
 echo '>>> sym-linking iterm2 files'
+if [ -e $HOME/.iterm2_shell_integration.zsh ]; then
+    rm -fv $HOME/.iterm2_shell_integration.zsh
+fi
 ln -sv $HERE/.iterm2_shell_integration.zsh $HOME/.iterm2_shell_integration.zsh
