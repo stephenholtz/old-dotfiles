@@ -83,4 +83,5 @@ ln -sv $HERE/.vifm/vifmrc $HOME/.vifm/vifmrc
 ln -sv $HERE/.vifm/colors $HOME/.vifm/colors
 
 # iterm2 shell
+echo '>>> sym-linking iterm2 files'
 ln -sv $HERE/.iterm2_shell_integration.zsh $HOME/.iterm2_shell_integration.zsh
