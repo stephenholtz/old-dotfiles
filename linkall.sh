@@ -9,10 +9,11 @@ ln -sv $HERE/{.vimrc,.zshrc,.tmux.conf,.bash_profile,.taskrc,.tmuxinator,.gitcon
 
 # Link colors
 echo '>>> sym-linking shell colors'
-if [ -e $HOME/.colors/ ]; then
+if [ -d $HOME/.colors/ ]; then
   rm -vf $HOME/.colors/
 fi
-ln -sv $HERE/colors $HOME/.colors
+mkdir -vp $HOME/.colors/
+ln -sv $HERE/colors/* $HOME/.colors/
 
 # Link vundle 
 echo '>>> sym-linking Vundle'
