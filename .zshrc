@@ -1,14 +1,9 @@
 # ~/dotfiles/ 
 autoload -U colors && colors
-
 # Set environmental variables
 export EDITOR="vim"
 export GIT_EDITOR="vim"
-if hash most &> /dev/null; then
-    export PAGER="most"
-else
-    export PAGER="less"
-fi
+export PAGER="less"
 
 # use the emacs keymap by default 
 bindkey -e 
@@ -45,7 +40,7 @@ fi
 # git
 alias g='git'
 # taskwarrior (some already from zsh plugins)
-# NOTE: tX is also aliased to a number of tmux actions
+# tX is also aliased to a number of tmux actions
 alias t='task'
 alias ttp='task project'
 alias ttl='task list'
@@ -95,49 +90,45 @@ fi
 # Set up fasd (antigen handles some)
 eval "$(fasd --init zsh-hook zsh-ccomp zsh-wcomp)"
 
-## ANTIGEN
-# similar to vundle, only for zsh 
+## ANTIGEN - similar to vundle, only for zsh 
 export ANTIGEN_DEFAULT_REPO_URL=https://github.com/robbyrussell/oh-my-zsh.git
 export ADOTDIR=$HOME/.antigen
 source ~/dotfiles/antigen/antigen.zsh
 # Use the oh-my-zsh library (lots of themes collected)
 antigen use oh-my-zsh
-
 # Set bundles
-antigen bundles <<EOBUNDLES
-# tools
-fasd
-pip
-git
-brew
-rsync
-node
-npm
-gem
-taskwarrior
-virtualenvwrapper
+# tools/utilities
+antigen bundle fasd
+antigen bundle git
+antigen bundle brew
+antigen bundle rsync
+antigen bundle taskwarrior
+# javascript
+antigen bundle node
+antigen bundle npm
+antigen bundle gem
+antigen bundle bundle
 # python pep8 and pylint completions
-python
-autopep8
+antigen bundle pip
+antigen bundle python
+antigen bundle autopep8
+antigen bundle virtualenvwrapper
 # tmux
-tmux
-tmuxinator
+antigen bundle tmux
+antigen bundle tmuxinator
 # vim
-vundle
+antigen bundle vim
+antigen bundle vundle
 # Useful guessing
-command-not-found
+antigen bundle command-not-found
 # have more completions
-zsh-users/zsh-completions src
-# zsh port of fish
-zsh-users/zsh-history-substring-search
+antigen bundle zsh-users/zsh-completions src
 # Very nice syntax highlighting
-zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-syntax-highlighting
 # have my man pages colored
-colored-man
+antigen bundle colored-man
 # MPB
-battery
-EOBUNDLES
-
+antigen bundle battery
 # Use a zsh theme
 antigen theme robbyrussell/oh-my-zsh themes/candy
 # Apply all settings
