@@ -84,11 +84,7 @@ Plugin 'tpope/vim-repeat'           " allows plugin maps to be repeated
 Plugin 'kien/ctrlp.vim'             " fuzzy searching (also ctags)
 Plugin 'rking/ag.vim'               " silver searcher integration
 
-""" Evernote plugins
-Plugin 'kakkyz81/evervim'           " clean way to edit / browse notes
-
 """ Language specific plugins
-Plugin 'jcfaria/VIM-R-plugin'       " for communication b/n vim and R 
 Plugin 'ervandew/screen'            " split shell within vim required by VimLab
 Plugin 'dajero/VimLab'              " matlab useage (tmux / screen.vim reqd)
 Plugin 'djoshea/vim-matlab'         " matlab support
