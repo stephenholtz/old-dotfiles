@@ -108,7 +108,6 @@ antigen bundle taskwarrior
 antigen bundle node
 antigen bundle npm
 antigen bundle gem
-antigen bundle bundle
 # python pep8 and pylint completions
 antigen bundle pip
 antigen bundle python
