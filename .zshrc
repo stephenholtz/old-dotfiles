@@ -1,4 +1,5 @@
 # ~/dotfiles/ 
+# TODO: break into sourced files...
 autoload -U colors && colors
 # Set environmental variables
 export EDITOR="vim"
@@ -117,7 +118,6 @@ antigen bundle virtualenvwrapper
 antigen bundle tmux
 antigen bundle tmuxinator
 # vim
-antigen bundle vim
 antigen bundle vundle
 # Useful guessing
 antigen bundle command-not-found
