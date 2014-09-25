@@ -42,26 +42,24 @@ fi
 ln -sv $HERE/elinks.conf $HOME/.elinks/elinks.conf
 
 # weechat scripts and conf (ignore the log files), 
-echo '>>> sym-linking weechat folder (maintaining log files)'
-if [ -d $HOME/.weechat ]; then
-    mv $HOME/.weechat/logs $HOME/temp-logs/
-    mv $HOME/.weechat/weechat.log $HOME/temp-weechat.log
-    mv $HOME/.weechat/irc.conf $HOME/temp-irc.conf
-    rm -r $HOME/.weechat/
+echo '>>> sym-linking weechat folder (preserve ~/.weechat/irc.conf)'
+if [ -f $HOME/.weechat/irc.conf ]; then
+    mv $HOME/.weechat/irc.conf $HOME/.temp.irc.conf
 fi
-mkdir -pv $HOME/.weechat/
-ln -sv $HERE/.weechat/* $HOME/.weechat
-mkdir -pv $HOME/.weechat/logs
-if [ -d $HOME/temp-weechat.log ]; then
-    mv $HOME/temp-logs/ $HOME/.weechat/logs
-    mv $HOME/temp-weechat.log $HOME/.weechat/weechat.log
-    mv $HOME/temp-irc.conf $HOME/.weechat/irc.conf
+if [ -d $HOME/weechat/ ]; then
+    rm -rv $HOME/.weechat/
+fi
+mkdir -vp $HOME/.weechat/
+ln -sv $HERE/.weechat/* $HOME/.weechat/
+if [ -f $HOME/.temp.irc.conf ]; then
+    mv $HOME/.temp.irc.conf $HOME/.weechat/irc.conf 
 fi
 
 # link bitlbee conf file goes to homebrew cellar
 echo '>>> sym-linking bitlbee.conf '
-rm /usr/local/Cellar/bitlbee/3.2.2/etc/bitlbee/bitlbee.conf
-ln -sv $HERE/bitlbee.conf /usr/local/Cellar/bitlbee/3.2.2/etc/bitlbee/bitlbee.conf
+BITLBEE_CONF_PATH=$( brew list bitlbee | grep '/etc\/bitlbee/bitlbee.conf' )
+rm -rv $BITLBEE_CONF_PATH
+ln -sv $HERE/bitlbee.conf $BITLBEE_CONF_PATH
 
 # matlab startup file
 echo '>>> sym-linking matlab startup'
