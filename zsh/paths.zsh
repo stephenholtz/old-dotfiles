@@ -10,7 +10,6 @@ if [ -d $HOME/anaconda ]; then
 fi
 
 # Python
-PATH="/usr/local/share/python:$PATH"
 # for powerline, add python path pip by default installs 
 #if [ -d "$HOME/Library/Python/2.7/bin" ]; then
 #    PATH="$HOME/Library/Python/2.7/bin:$PATH"
