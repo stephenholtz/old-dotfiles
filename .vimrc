@@ -1,13 +1,13 @@
-﻿" Vim configuration file, 
+﻿" Vim configuration file
 " https://www.github.com/stephenholtz/dotfiles/.vimrc
 "
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " General
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set nocompatible                " Allow just Vi iMproved
-set history=700                 " Sets how many lines of history VIM has to remember
-set autoread                    " Set to auto read when a file is changed from the outside
-set so=4                        " Set 4 lines to the cursor - when moving vertically using j/k
+set nocompatible                " Just Vi iMproved
+set history=700                 " Lines of history VIM has to remember
+set autoread                    " read automatically when file changed from outside
+set so=4                        " 4 lines always above / below cursor
 set number                      " show line numbers
 set wildmenu                    " Turn on the WiLd menu for tab complete etc.,
 set wildignore=*.o,*~,*.pyc     " Ignore compiled files
@@ -15,7 +15,7 @@ set ruler                       " Always show current position
 set cmdheight=1                 " Height of the command bar
 set hid                         " A buffer becomes hidden when it is abandoned
 set backspace=eol,start,indent  " Configure backspace so it acts as it should act
-set whichwrap+=<,>,h,l          " Vestigial, unsure of function....
+set whichwrap+=<,>,h,l           
 set ignorecase                  " Ignore case when searching
 set smartcase                   " When searching try to be smart about cases 
 set hlsearch                    " Highlight search results
@@ -24,43 +24,37 @@ set magic                       " For regular expressions turn magic on
 set showmatch                   " Show matching brackets when text indicator is over them
 set mat=2                       " How many tenths of a second to blink when matching brackets
 set noerrorbells                " No annoying sound on errors
-set novisualbell                " No annoying sound on errors
-set tm=500
-set nobackup                    " Turn backup off
-set nowb 
-set noswapfile
-set encoding=utf8               " Set utf8 as standard encoding and en_US as the standard language
+set novisualbell                " No annoying flash on errors
+set tm=500                      " 
+set nobackup                    " backup off
+set noswapfile                  " swapfile off
+set encoding=utf8               " utf8 as standard encoding
 set ffs=unix,dos,mac            " Use Unix as the standard file type
 set wrapscan                    " Allow search to wrap (default)
-
-" Appearance                    set colorscheme is below (after bundle management)
-set t_Co=256
-set lazyredraw                  " Don't redraw while executing macros (good performance config)
+set t_Co=256                    " Use 256 colors
+set lazyredraw                  " Don't redraw while executing macros
 set expandtab                   " Use spaces instead of tabs
 set smarttab                    " Be smart when using tabs
 set shiftwidth=4                " 1 tab == 4 spaces
 set tabstop=4
-set guifont=Inconsolata:h14      " installed on macosx (copy in dotfiles/fonts)
+set guifont=Inconsolata:h14     " installed on macosx (copy in dotfiles/fonts)
 set listchars=tab:»\ ,eol:¬,trail:. " show hidden characters
-" Linebreak on 500 characters
-set lbr
+set lbr                         " Linebreak on 500 characters
 set tw=500
-
-set ai   " Auto indent
-set si   " Smart indent
-set wrap " Wrap lines
+set ai                          " Auto indent
+set si                          " Smart indent
+set wrap                        " Wrap lines
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Bundles 
+" Bundles (VIM plugins) 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Use Vundle for bundling plugins
 " :PluginList          - list configured bundles
 " :PluginInstall(!)    - install(update) bundles
 " :PluginSearch(!) foo - search(or refresh cache first) for foo
 " :PluginClean(!)      - confirm(or auto-approve) removal of unused bundles
-" see :h vundle for more details or wiki for FAQ
-
 " To install bundles, just add in below (defaults to github)
+
 filetype off        " Required by vundle
 " set the runtime path to include Vundle and initialize
 set rtp+=$HOME/.vim/bundle/Vundle.vim
@@ -70,7 +64,7 @@ call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
 
 """ Colorscheme plugins
-Plugin 'chriskempson/base16-vim'          " well maintained colorschemes
+Plugin 'chriskempson/base16-vim'    " well maintained colorschemes
 
 """ Misc plugins
 Plugin 'tpope/vim-surround'         " surround text easily
@@ -95,59 +89,30 @@ Plugin 'jpalardy/vim-slime'         " send text to tmux etc.
 Plugin 'benmills/vimux'             " interact with tmux
 
 call vundle#end()                   " required
-filetype plugin indent on           " required
+filetype plugin indent on           " required by vundle / packages
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " matlab setup (mlint compatibility)
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " matlab's bin *must* be in my PATH
 " autocmd BufEnter *.m    compiler mlint 
 " autocmd BufEnter *.m    map <M-n> :cnext<CR> 
 " autocmd BufEnter *.m    map <M-p> :cprevious<CR> 
-
 " autocmd BufLeave *.m    unmap <M-n> 
 " autocmd BufLeave *.m    unmap <M-p> 
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" R environment setup OSX relies on screen.vim and VIM-R-plugin
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" - Requires installation of VimCom in R: 
-"   chooseCRANmirror()
-"   install.package('devtools')
-"   library(devtools)
-"   install_github('jalvesaq/VimCom')
-
-filetype plugin on      " Use filetype plugins for nerdcommenter, and nerdtree  plugin
-filetype indent on      " Required by vundle
-
-" Opens R in terminal rather than RGui (OSX)
-let vimplugin_applescript = 0
-let vimplugin_screenplugin = 0
-" Other R/tmux conf
-let g:screenImpl = 'Tmux'               " Enable Tmux support
-let vimrplugin_screenvsplit = 1         " Vertical Tmux split
-let g:ScreenShellInitialFocus = 'shell' " 
-let g:vimrplugin_noscreenrc = 1         " use my own .screenrc
-let vimrplugin_conqueplugin = 0         " ignore concue plugin
-let g:vimrplugin_map_r = 1              " allow r-plugin to send lines to R
-let vimrplugin_vimpager = "no"          " see Vim buffer R documentation...
-" Mapping for R 
-" Start R with F2 Key
-map <F2> <Plug>Rstart
-imap <F2> <Plug>Rstart
-vmap <F2> <Plug>Rstart
-" Send selection to R with space bar
-vmap <Space> <Plug>RDSendSelection
-" Send line to R with space bar
-nmap <Space> <Plug>RDSendLine
-
 " NERDtree setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let NERDTreeShowHidden = 1 " Let nerdtree show hidden files
 
 " Fast NERDTree opening
 nmap <leader>n :NERDTree<cr>
 nmap <leader>f :MatlabFoldText()<cr>
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " ctrlp setup
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set runtimepath^=~/.vim/bundle/ctrlp.vim
 let g:ctrlp_switch_buffer = 'Et' " If already open, try to switch instead of opening
 
