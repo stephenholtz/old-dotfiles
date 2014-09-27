@@ -1759,7 +1759,7 @@
 	<key>NSFontPanelAttributes</key>
 	<string>1, 8</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/colors/base16-iterm2</string>
+	<string>~/dotfiles/iterm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{968, 463}</string>
 	<key>NSNavPanelExpandedStateForSaveMode</key>
@@ -1799,7 +1799,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>34 246 796 474 0 0 1280 777 </string>
+	<string>34 257 796 474 0 0 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>332 288 620 392 0 0 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlertFrame</key>
@@ -4749,7 +4749,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/stephenholtz/dotfiles/</string>
+	<string>/Users/stephenholtz/dotfiles/iterm2</string>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>

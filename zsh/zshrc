@@ -1,8 +1,7 @@
 # ~/dotfiles/zsh/zshrc
-DOTFILES="$HOME/dotfiles/"
+DOTFILES="$HOME/dotfiles"
 
 ## ZSH options 
-source $DOTFILES/zsh/configuration.zsh
 # colors on
 autoload -U colors; colors
 # History setup
@@ -37,7 +36,7 @@ source $DOTFILES/zsh/paths.zsh
 
 ## Tool integration/config
 # tmuxinator for managing tmux sessions
-source $DOTFILES/zsh/tmuxinator/tmuxinator.zsh
+source $DOTFILES/tmuxinator/tmuxinator.zsh
 # iterm2 
 source $DOTFILES/zsh/iterm2_shell_integration.zsh
 # rbenv (see paths.zsh)

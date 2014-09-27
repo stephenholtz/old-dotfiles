@@ -50,7 +50,7 @@ echo '>>> sym-linking weechat folder (preserve ~/.weechat/irc.conf)'
 if [ -f $HOME/.weechat/irc.conf ]; then
     mv $HOME/.weechat/irc.conf $HOME/.temp.irc.conf
 fi
-if [ -d $HOME/weechat/ ]; then
+if [ -d $HOME/.weechat/ ]; then
     rm -rv $HOME/.weechat/
 fi
 mkdir -vp $HOME/.weechat/
