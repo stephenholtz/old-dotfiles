@@ -1702,7 +1702,22 @@
 	<key>FsTabDelay</key>
 	<real>1</real>
 	<key>GlobalKeyMap</key>
-	<dict/>
+	<dict>
+		<key>0xf72c-0x20000</key>
+		<dict>
+			<key>Action</key>
+			<integer>9</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+		<key>0xf72d-0x20000</key>
+		<dict>
+			<key>Action</key>
+			<integer>8</integer>
+			<key>Text</key>
+			<string></string>
+		</dict>
+	</dict>
 	<key>HiddenAFRStrokeThickness</key>
 	<real>0.0</real>
 	<key>HiddenAdvancedFontRendering</key>
@@ -1738,13 +1753,13 @@
 	<key>LeftOption</key>
 	<integer>2</integer>
 	<key>LoadPrefsFromCustomFolder</key>
-	<true/>
+	<integer>1</integer>
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSFontPanelAttributes</key>
 	<string>1, 8</string>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/colors/base16-iterm2</string>
+	<string>~/dotfiles/iterm2</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{968, 463}</string>
 	<key>NSNavPanelExpandedStateForSaveMode</key>
@@ -1784,7 +1799,7 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame Preferences</key>
-	<string>34 235 796 474 0 0 1280 777 </string>
+	<string>34 257 796 474 0 0 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlert</key>
 	<string>332 288 620 392 0 0 1280 777 </string>
 	<key>NSWindow Frame SUUpdateAlertFrame</key>
@@ -4734,7 +4749,7 @@
 		</dict>
 	</dict>
 	<key>PrefsCustomFolder</key>
-	<string>/Users/stephenholtz/dotfiles/</string>
+	<string>/Users/stephenholtz/dotfiles/iterm2</string>
 	<key>PromptOnClose</key>
 	<true/>
 	<key>PromptOnQuit</key>
@@ -4756,9 +4771,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-09-23T01:01:49Z</date>
-	<key>SUSkippedVersion</key>
-	<string>2.9.20140921-nightly</string>
+	<date>2014-09-27T16:06:44Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Secure Input</key>
@@ -4814,7 +4827,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20140920-nightly</string>
+	<string>2.9.20140927-nightly</string>
 	<key>kCommandHistoryHasEverBeenUsed</key>
 	<true/>
 </dict>

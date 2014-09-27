@@ -33,4 +33,3 @@ preexec() {
 printf "\033]1337;RemoteHost='$USER'@`hostname -f`\007"
 printf "\033]1337;CurrentDir=$PWD\007"
 printf "\033]1337;ShellIntegrationVersion=1\007"
-
