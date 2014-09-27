@@ -24,7 +24,7 @@ echo '>>> sym-linking Vundle'
 if [ ! -d $HOME/.vim/bundle/ ]; then
     mkdir -pv $HOME/.vim/bundle
 else
-    if [ -d $HOME/.vim/bundle/Vundle.vim ]; then
+    if [ -e $HOME/.vim/bundle/Vundle.vim ]; then
       rm -rf $HOME/.vim/bundle/Vundle.vim
     fi
 fi
