@@ -1,0 +1,62 @@
+# ~/dotfiles/zsh/zshrc
+DOTFILES="$HOME/dotfiles/"
+
+## ZSH options 
+source $DOTFILES/zsh/configuration.zsh
+# colors on
+autoload -U colors; colors
+# History setup
+HISTSIZE=1000
+SAVEHIST=1000
+HISTFILE=~/.zsh_history
+# emacs line editor
+bindkey -e 
+# no damn beep
+setopt nobeep
+# glob away
+setopt extended_glob 
+
+# Standard env variables
+export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+export EDITOR="vim"
+export PAGER="less"
+
+## program variables
+export GIT_EDITOR="vim"
+export GREP_OPTIONS='--color=auto'
+export GREP_COLOR='1;32'
+export HOMEBREW_CASK_OPTS="--appdir=/Applications --caskroom=/opt/homebrew-cask/Caskroom"
+# required for my tmux vim configs to work 
+export TERM="screen-256color"
+
+## Aliases
+source $DOTFILES/zsh/aliases.zsh 
+## Path
+source $DOTFILES/zsh/paths.zsh
+
+## Tool integration/config
+# tmuxinator for managing tmux sessions
+source $DOTFILES/zsh/tmuxinator/tmuxinator.zsh
+# iterm2 
+source $DOTFILES/zsh/iterm2_shell_integration.zsh
+# rbenv (see paths.zsh)
+rbenv global 2.1.2 > /dev/null
+# fasd 
+eval "$(fasd --init zsh-hook zsh-ccomp zsh-wcomp)"
+
+## Antigen - vundle for zsh 
+export ANTIGEN_DEFAULT_REPO_URL=https://github.com/robbyrussell/oh-my-zsh.git
+export ADOTDIR=$HOME/.antigen
+source $DOTFILES/antigen/antigen.zsh
+# my list of bundles
+source $DOTFILES/zsh/antigen-bundles.zsh
+
+# start completion after plugins loaded
+autoload -U compinit; compinit i
+
+## Colorscheme
+# Base16 Shell on top of antigen theme
+BASE16_SCHEME="tomorrow"
+BASE16_SHELL="$HOME/.colors/base16-shell/base16-$BASE16_SCHEME.dark.sh"
+[[ -s $BASE16_SHELL ]] && . $BASE16_SHELL

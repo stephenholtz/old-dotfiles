@@ -4,8 +4,12 @@ echo ''
 
 HERE=${HOME}/dotfiles/
 echo '>>> sym-linking config files' $HERE 'to' $HOME
-rm -r $HOME/{.vimrc,.zshrc,.tmux.conf,.bash_profile,.taskrc,.tmuxinator,.gitconfig}
-ln -sv $HERE/{.vimrc,.zshrc,.tmux.conf,.bash_profile,.taskrc,.tmuxinator,.gitconfig} $HOME
+rm -rv $HOME/{.vimrc,.tmux.conf,.bash_profile,.taskrc,.gitconfig}
+ln -sv $HERE/{.vimrc,.tmux.conf,.bash_profile,.taskrc,.gitconfig} $HOME
+rm -rv $HOME/.zshrc
+ln -sv $HERE/zsh/zshrc $HOME/.zshrc
+rm -rv $HOME/.tmuxinator
+ln -sv $HERE/zsh/tmuxinator $HOME/.tmuxinator
 
 # Link colors
 echo '>>> sym-linking shell colors'
@@ -80,10 +84,3 @@ else
 fi
 ln -sv $HERE/.vifm/vifmrc $HOME/.vifm/vifmrc
 ln -sv $HERE/.vifm/colors $HOME/.vifm/colors
-
-# iterm2 shell
-echo '>>> sym-linking iterm2 files'
-if [ -e $HOME/.iterm2_shell_integration.zsh ]; then
-    rm -fv $HOME/.iterm2_shell_integration.zsh
-fi
-ln -sv $HERE/.iterm2_shell_integration.zsh $HOME/.iterm2_shell_integration.zsh
