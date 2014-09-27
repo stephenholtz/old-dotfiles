@@ -54,7 +54,7 @@ if [ -d $HOME/.weechat/ ]; then
     rm -rv $HOME/.weechat/
 fi
 mkdir -vp $HOME/.weechat/
-ln -sv $HERE/.weechat/* $HOME/.weechat/
+ln -sv $HERE/weechat/* $HOME/.weechat/
 if [ -f $HOME/.temp.irc.conf ]; then
     mv $HOME/.temp.irc.conf $HOME/.weechat/irc.conf 
 fi
@@ -82,5 +82,5 @@ else
     rm -rf $HOME/.vifm/colors
     rm -rf $HOME/.vifm/vifmrc
 fi
-ln -sv $HERE/.vifm/vifmrc $HOME/.vifm/vifmrc
-ln -sv $HERE/.vifm/colors $HOME/.vifm/colors
+ln -sv $HERE/vifm/vifmrc $HOME/.vifm/vifmrc
+ln -sv $HERE/vifm/colors $HOME/.vifm/colors
