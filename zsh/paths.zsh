@@ -4,16 +4,16 @@
 PATH="/usr/local/sbin:$PATH"
 PATH="/usr/local/bin:$PATH"
 
+# pip (for python) install with sudo easy_instlal pip
+# this path required for idiosyncratic tools: powerline
+if [ -d "$HOME/Library/Python/2.7/bin" ]; then
+    PATH="$HOME/Library/Python/2.7/bin:$PATH"
+fi
+
 # Anaconda - python dist
 if [ -d $HOME/anaconda ]; then
     export PATH="$PATH:$HOME/anaconda/bin"
 fi
-
-# Python
-# for powerline, add python path pip by default installs 
-#if [ -d "$HOME/Library/Python/2.7/bin" ]; then
-#    PATH="$HOME/Library/Python/2.7/bin:$PATH"
-#fi
 
 # Ruby
 PATH="$HOME/.rbenv/bin:$PATH"
