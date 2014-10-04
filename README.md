@@ -1,4 +1,4 @@
-## dotfiles
+dotfiles
 =======================================================================
 #### features
 - zsh with [antigen](https://github.com/zsh-users/antigen)
