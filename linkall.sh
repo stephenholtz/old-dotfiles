@@ -9,7 +9,7 @@ ln -sfv $DOTFILES/bash_profile $HOME/.bash_profile
 ln -sfv $DOTFILES/taskrc $HOME/.taskrc
 ln -sfv $DOTFILES/vimrc $HOME/.vimrc
 ln -sfv $DOTFILES/zsh/zshrc $HOME/.zshrc
-ln -sfv $DOTFILES/zsh/tmuxinator $HOME/.tmuxinator
+ln -sfv $DOTFILES/tmuxinator $HOME/.tmuxinator
 
 # Link colors
 echo '>>> sym-linking shell colors'
