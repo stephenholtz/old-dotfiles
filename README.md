@@ -15,5 +15,6 @@ dotfiles
 #### link files
 - linkall.sh has mostly hard-coded linking from $HOME/dotfiles/{dotless_path_name} to $HOME/{standard_path_name}
 - sh ~/dotfiles/linkall.sh
+- 
 #### change colorscheme
 - required to do so in vimrc, zshrc, and iterm2 perferences
