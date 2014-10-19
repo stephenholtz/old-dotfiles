@@ -56,6 +56,6 @@ autoload -U compinit; compinit i
 
 ## Colorscheme
 # Base16 Shell on top of antigen theme
-BASE16_SCHEME="tomorrow"
+BASE16_SCHEME="chalk"
 BASE16_SHELL="$HOME/.colors/base16-shell/base16-$BASE16_SCHEME.dark.sh"
 [[ -s $BASE16_SHELL ]] && . $BASE16_SHELL

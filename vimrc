@@ -31,7 +31,6 @@ set noswapfile                  " swapfile off
 set encoding=utf8               " utf8 as standard encoding
 set ffs=unix,dos,mac            " Use Unix as the standard file type
 set wrapscan                    " Allow search to wrap (default)
-set t_Co=256                    " Use 256 colors
 set lazyredraw                  " Don't redraw while executing macros
 set expandtab                   " Use spaces instead of tabs
 set smarttab                    " Be smart when using tabs
@@ -183,8 +182,15 @@ nmap <leader><leader> <C-^>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark         " User dark version of base16 colors
 syntax on                   " Required
-let base16colorspace=256    " Access colors present in 256 colorspace
-colorscheme base16-eighties
+colorscheme base16-chalk
+
+" Use 256 colors
+set t_Co=256
+let base16colorspace=256
+" Use 16 colors
+"set t_Co=16                
+"let base16colorspace=16
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Powerline ( installed with pip )
