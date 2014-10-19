@@ -72,7 +72,7 @@ if [ ! -d $HOME/Documents/MATLAB ]; then
 else
   rm -v $HOME/Documents/MATLAB/startup.m
 fi
-ln -sv $HERE/startup.m $HOME/Documents/MATLAB/startup.m
+ln -sv $DOTFILES/startup.m $HOME/Documents/MATLAB/startup.m
 
 # vifm - don't link or overwrite history or Trash
 echo '>>> sym-linking vifm files'
