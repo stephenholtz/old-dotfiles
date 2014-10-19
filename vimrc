@@ -182,7 +182,7 @@ nmap <leader><leader> <C-^>
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark         " User dark version of base16 colors
 syntax on                   " Required
-colorscheme base16-chalk
+colorscheme base16-3024
 
 " Use 256 colors
 set t_Co=256
