@@ -1,4 +1,4 @@
-%% startup.m for osx
+%% startup.m for windows PC
 %
 % Execute these commands at startup
 % Note: this has to be a hard link or in the Matlab directory.
@@ -28,8 +28,7 @@ restoredefaultpath;
 savepath;
 
 % Add paths
-pathsToAdd = {  '/Users/stephenholtz/code/grad/matlab-utils',...
-                '/Users/stephenholtz/code/grad/antenna-auditory-exps'};
+pathsToAdd = {'C:\code\'};
 
 % Remind myself that this script runs
 fprintf('Running: %s\nRestored default Matlab path (restoredefaultpath).\nRecursively adding files from:\n',  mfilename('fullpath'))
