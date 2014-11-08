@@ -23,7 +23,6 @@ fi
 alias g='git'
 
 # taskwarrior (some already from zsh plugins)
-alias t='task'
 alias ttp='task project'
 alias ttl='task list'
 alias tta='task add'
