@@ -62,6 +62,9 @@ call vundle#begin()
 " vundle to easily manage plugins
 Plugin 'gmarik/Vundle.vim'
 
+""" Powerline replacement
+Plugin 'bling/vim-airline'    " instead of powerline
+
 """ Colorscheme plugins
 Plugin 'chriskempson/base16-vim'    " well maintained colorschemes
 
@@ -178,6 +181,14 @@ nmap <leader><leader> <C-^>
 "endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" vim-airline
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+set laststatus=2
+set ambiwidth=single
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Colorscheme
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set background=dark         " User dark version of base16 colors
@@ -191,15 +202,14 @@ let base16colorspace=256
 "set t_Co=16                
 "let base16colorspace=16
 
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Powerline ( installed with pip )
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-python from powerline.vim import setup as powerline_setup
-python powerline_setup()
-python del powerline_setup
-set encoding=utf-8
-set laststatus=2
-set ambiwidth=single
-set noshowmode
-let g:Powerline_symbols='fancy'
+"python from powerline.vim import setup as powerline_setup
+"python powerline_setup()
+"python del powerline_setup
+"set encoding=utf-8
+"set laststatus=2
+"set ambiwidth=single
+"set noshowmode
+"let g:Powerline_symbols='fancy'
