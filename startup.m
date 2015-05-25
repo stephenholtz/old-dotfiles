@@ -29,7 +29,7 @@ savepath;
 
 % Add paths
 pathsToAdd = {  '/Users/stephenholtz/code/grad/matlab-utils',...
-                '/Users/stephenholtz/code/grad/antenna-auditory-exps'};
+                '/Users/stephenholtz/code/grad/auditory-physiology'};
 
 % Remind myself that this script runs
 fprintf('Running: %s\nRestored default Matlab path (restoredefaultpath).\nRecursively adding files from:\n',  mfilename('fullpath'))
