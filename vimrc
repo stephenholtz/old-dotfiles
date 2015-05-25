@@ -71,7 +71,7 @@ Plugin 'chriskempson/base16-vim'    " well maintained colorschemes
 """ Misc plugins
 Plugin 'tpope/vim-surround'         " surround text easily
 Plugin 'corntrace/bufexplorer'      " essential buffer ext
-Plugin 'fholgado/minibufexpl.vim'   " Mini bufferexplorer
+"Plugin 'fholgado/minibufexpl.vim'   " Mini bufferexplorer
 Plugin 'godlygeek/tabular'          " organized, readable code
 Plugin 'scrooloose/nerdtree'        " file browsing
 Plugin 'scrooloose/syntastic'       " syntax checking
